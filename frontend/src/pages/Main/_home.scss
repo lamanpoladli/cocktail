@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+.eachslideeffect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 830px;
+}
+
+.eachslideeffect {
+  span {
+    padding: 20px;
+    font-size: 20px;
+    background: transparent;
+    color: white;
+    text-align: center;
+    p {
+      font-size: 30px;
+      font-family: 'Caveat', cursive;
+    }
+    h1{
+      font-size: 70px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+  }
+}
+
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: white;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  width: 20%;
+  height: 60px;
+  margin-top: 5%;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
