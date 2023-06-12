@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -23,30 +23,33 @@
     text-align: center;
     p {
       font-size: 30px;
-      font-family: 'Caveat', cursive;
+      font-family: "Caveat", cursive;
     }
-    h1{
+    h1 {
       font-size: 70px;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
-    
   }
 }
 
 .button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
   --color: white;
-  
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
-  outline-offset: .6em;
+  outline-offset: 0.6em;
   font-size: 16px;
   width: 20%;
   height: 60px;
@@ -60,10 +63,10 @@
 }
 
 .button-89:hover,
-.button-89:focus-visible{
+.button-89:focus-visible {
   --_p: 0px;
   outline-color: var(--color);
-  outline-offset: .05em;
+  outline-offset: 0.05em;
 }
 
 .button-89:active {
@@ -76,4 +79,31 @@
 :root {
   --animate-duration: 800ms;
   --animate-delay: 0.9s;
+}
+@media screen and (max-width: 900px) {
+  .eachslideeffect {
+    span {
+      font-size: 15px;
+      p {
+        font-size: 25px;
+      }
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+  .button-89 {
+    font-size: 15px;
+    width: 40%;
+    height: 60px;
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .button-89 {
+    font-size: 15px;
+    width: 50%;
+    height: 60px;
+    margin-top: 5%;
+  }
 }
