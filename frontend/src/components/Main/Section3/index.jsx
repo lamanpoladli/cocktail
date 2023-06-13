@@ -1,0 +1,35 @@
+import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./_index.scss";
+const index = () => {
+  return (
+    <>
+      <section className="sectionWord">
+        <div className="container">
+          <Row>
+            <div className="colWord">
+            <h6><i>Visit a bar</i></h6>
+            <h1>Open hours</h1>
+            <p>Monday - Friday:<br></br>4:00 pm - 1:00 am</p>
+            <p>Saturday:<br></br>4:00 pm - 3:00 am</p>
+            <p>Sunday:<br></br>4:00 pm - 2:00 am</p>
+            <p><i>Visit us</i></p>
+            </div>
+            <div className="colImage"><img src="https://bridge269.qodeinteractive.com/wp-content/uploads/2019/10/single-img-1.jpg" alt="" /></div>
+            <div className="colWord">
+            <h6><i>The best offer</i></h6>
+            <h1>Happy hour</h1>
+            <p>Monday - Sunday:<br></br>4:00 pm - 7:00 am</p>
+            <p>20% off all wine by the glass<br></br>15% off all cocktails</p>
+            <p>25% off all wine by the glass<br></br>10% off all cocktails</p>
+            <p><i>View more</i></p>
+            </div>
+          </Row>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default index;

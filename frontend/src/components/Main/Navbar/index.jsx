@@ -12,6 +12,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ListIcon from "@mui/icons-material/List";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Index = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -21,9 +22,19 @@ const Index = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+      if (window.scrollY >= 80) {
+          setColorchange(true);
+      }
+      else {
+          setColorchange(false);
+      }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
   return (
-    <header>
-      <nav>
+    <header >
+      <nav className={colorChange ? 'navbar-fixed' : 'navbar-static'}>
         <Row className="row">
           <Col className="col1">
             <h1 class="my-element">Bridge</h1>

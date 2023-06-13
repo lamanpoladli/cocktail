@@ -1,0 +1,31 @@
+.sectionWord {
+  background-color: black;
+  padding: 7% 0px;
+}
+.container {
+  width: 65%;
+}
+.colImage {
+  width: 33.333%;
+  img {
+    width: 100%;
+  }
+}
+.colWord {
+  width: 33.333%;
+  padding: 2% 2%;
+  text-align: center;
+  p {
+    font-size: 17px;
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .colImage {
+    width: 100% ;
+  }
+  .colWord {
+    width: 100% ;
+  }
+}

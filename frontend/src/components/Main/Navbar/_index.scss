@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap");
 nav {
   height: 100px;
-  position: fixed;
   top: 0;
   z-index: 99;
+  position: fixed;
   width: 100%;
-
   .row {
     height: 100%;
   }
@@ -164,4 +163,10 @@ nav {
   .col4{
     display: flex;
   }
+}
+.navbar-fixed{
+  background-color: black;
+}
+.navbar-static{
+  background-color: transparent;
 }
