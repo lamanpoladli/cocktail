@@ -5,6 +5,7 @@ import AdminLogin from "../pages/Admin/AdminLogin";
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import NotFound from "../pages/Main/NotFound";
+import Reservations from "../pages/Admin/Reservations";
 
 export const ROUTES = [
     //Main Root - user side
@@ -34,6 +35,10 @@ export const ROUTES = [
             {
                 path:'home',
                 element:<AdminHome/>
+            },
+            {
+                path:'reservations',
+                element:<Reservations/>
             }
         ]
     }

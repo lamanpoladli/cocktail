@@ -25,3 +25,21 @@ export const postImage = (payload) => {
 export const editImage = (id,payload)=>{
     axios.put(`${BASE_URL}/images/${id}`,payload);
   }
+
+
+
+
+  
+  export const postReservation = (payload) => {
+    axios.post(`${BASE_URL}/reservation`, payload);
+}
+
+export const getAllReservations = async () => {
+    let globalData;
+    let URL;
+      URL = BASE_URL+'/reservation';
+    await axios.get(URL).then((res) => {
+      globalData = res.data.data;
+    });
+    return globalData;
+  };

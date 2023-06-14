@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const image_router = require('./routes/imageRoutes');
+const reservationModel = require('./models/reservationModel');
 dotenv.config();
 app.use(bodyParser.json());
 app.use(cors());
@@ -102,9 +102,34 @@ app.get('/api/users',verifyJWT,async(req,res)=>{
 })
 
 
-app.use('/api/images/', image_router)
+
 
 PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`NODE APP listening on port ${PORT}`);
 });
+
+// app.post('/reservation', async (req, res) => {
+//     const { personCount, date, clock } = req.body;
+//   const newReservation = new reservationModel({ 
+//     // id: crypto.randomUUID(),
+//     personCount: personCount,
+//     date: date,
+//     clock: clock
+//   });
+//   await newReservation.save();
+//   res.status(201).send("created");
+    
+    
+//   })
+
+//   app.get('/reservation', async (req, res) => {
+//     const reservations = await reservationModel.find();
+//       res.status(200).send({
+//         data: reservations,
+//         message: "data get success!",
+//       });
+//     })
+
+    const reservationRoute = require("./routes/reservationRoutes");
+app.use("/reservation", reservationRoute);
