@@ -1,3 +1,37 @@
+
 img{
     width: 100%;
+}
+
+.containerSec1{
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+}
+.colSec1{
+    width: 50%;
+    color: white;
+}
+.pad{
+    padding: 8% 5% 0px 5%;
+}
+.buttonSec1{
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    margin: 8% 0px 0px 0px;
+    transition: 0.5s;
+    &:hover{
+        background-color: white;
+        color: black;
+        
+    }
+}
+.section2{
+    div{
+        width: 100%;
+        height: 600px;
+    }
 }
