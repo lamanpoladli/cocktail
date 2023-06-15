@@ -11,6 +11,7 @@ const reservationController = {
 },
     post: async (req, res) => {
         const { personCount, date, clock } = req.body;
+        console.log(req.body);
         const newReservation = new reservationModel({ 
           // id: crypto.randomUUID(),
           personCount: personCount,
@@ -21,7 +22,6 @@ const reservationController = {
         res.status(201).send("created");
           
     },
-   
 };
 
 module.exports = reservationController

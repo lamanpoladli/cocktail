@@ -7,6 +7,7 @@ import AddImage from "../pages/Admin/AddImage";
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import NotFound from "../pages/Main/NotFound";
+import About from "../components/Main/About";
 
 
 export const ROUTES = [
@@ -22,6 +23,10 @@ export const ROUTES = [
             {
                 path:'*',
                 element: <NotFound/>
+            },
+            {
+                path:'about',
+                element: <About/>
             }
         ]
     },

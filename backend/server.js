@@ -205,3 +205,13 @@ app.post('/imagees',upload.single('profileImg'),async(req,res)=>{
             });
     })
 })
+app.delete('/imagees/:id',async(req,res)=>{
+    const id = req.params.id;
+    const deleted = await ImageModel.findByIdAndDelete(id);
+    const idx = deleted.profileImg.indexOf("uploads/");
+    const imageName = deleted.profileImg.substr(idx);
+    fs.unlinkSync('./'+imageName);
+    res.status(200).send({
+        message: 'deleted successfully!'
+    })
+})

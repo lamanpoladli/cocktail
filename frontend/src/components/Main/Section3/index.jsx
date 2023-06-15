@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "./_index.scss";
-import { getAll } from "../../../api/requests";
+import { getAll} from "../../../api/requests";
 const Index = () => {
-  const[imagees,setImageess]=useState([]);
+  const[imagees,setImagees]=useState([]);
   useEffect(()=>{
     getAll().then((res)=>{
-      setImageess(res);
+      setImagees(res);
     })
   },[])
   return (
@@ -24,8 +23,10 @@ const Index = () => {
             <p><i>Visit us</i></p>
             </div>
             {imagees && imagees.map((image)=>{
-              return(<div key={image._id} className="colImage"><img  src={image.profileImg} alt="" /></div>)
+              return(<div key={image._id} className="colImage"><img  src={image.profileImg} alt="" /></div>
+              )
             })}
+            
             <div className="colWord">
             <h6><i>The best offer</i></h6>
             <h1>Happy hour</h1>

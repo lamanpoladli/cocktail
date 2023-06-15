@@ -1,0 +1,16 @@
+.containerData{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    div{
+        width: 23%;
+        height: 300px;
+        border: solid;
+        margin: 3% 1%;
+        background-color: rgb(169, 155, 136);
+        color: white;
+        border-radius: 20px;
+        padding: 1%;
+    }
+}

@@ -4,10 +4,10 @@ const reservationController = require('../controllers/reservationController');
 
 
 //get All Images
-reservation_router.get('/admin',reservationController.get)
+reservation_router.get('/',reservationController.get)
 
 //post Image
-reservation_router.post('/admin',reservationController.post)
+reservation_router.post('/',reservationController.post)
 
 
 

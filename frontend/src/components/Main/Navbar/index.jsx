@@ -37,12 +37,12 @@ const Index = () => {
       <nav className={colorChange ? 'navbar-fixed' : 'navbar-static'}>
         <Row className="row">
           <Col className="col1">
-            <h1 class="my-element">Bridge</h1>
+            <h1 class="my-element"><Link className="link" to={"/"}>Bridge</Link></h1>
           </Col>
           <Col className="col2">
             <ul>
-              <li class="my-element">Home</li>
-              <li class="my-element">About</li>
+              <li class="my-element"><Link className="link" to={"/"}>Home</Link></li>
+              <li class="my-element"><Link className="link" to={"/about"}>About</Link></li>
               <li class="my-element">Menu</li>
               <li class="my-element">Reservations</li>
               <li class="my-element">Contact</li>

@@ -58,3 +58,6 @@ export const getAllReservations = async () => {
 export const postImg = (payload)=>{
     axios.post(`${BASE_URL}/imagees`,payload);
 }
+export const deleteImg = (id)=>{
+  axios.delete(`${BASE_URL}/imagees/${id}`);
+}
