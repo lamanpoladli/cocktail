@@ -30,6 +30,8 @@ export const editImage = (id,payload)=>{
 
 
   
+
+
   export const postReservation = (payload) => {
     axios.post(`${BASE_URL}/reservation`, payload);
 }
@@ -43,3 +45,16 @@ export const getAllReservations = async () => {
     });
     return globalData;
   };
+
+
+  export const getAll = async()=>{
+    let globalData;
+    await axios.get(`${BASE_URL}/imagees`)
+    .then((res)=>{
+        globalData = res.data;
+    })
+    return globalData;
+}
+export const postImg = (payload)=>{
+    axios.post(`${BASE_URL}/imagees`,payload);
+}

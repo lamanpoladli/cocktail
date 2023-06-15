@@ -6,6 +6,9 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const multer = require("multer");
+const uuid = require('uuid');
+const fs = require('fs');
 const reservationModel = require('./models/reservationModel');
 dotenv.config();
 app.use(bodyParser.json());
@@ -131,5 +134,74 @@ app.listen(PORT, () => {
 //       });
 //     })
 
-    const reservationRoute = require("./routes/reservationRoutes");
+const reservationRoute = require("./routes/reservationRoutes");
 app.use("/reservation", reservationRoute);
+
+
+
+
+
+
+
+
+
+
+app.use(bodyParser.urlencoded({extended:false}))
+const DIR = './uploads/';
+app.use('/uploads', express.static('uploads'));
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, DIR);
+    },
+    filename: (req, file, cb) => {
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        cb(null, uuid.v4() + '-' + fileName)
+    }
+});
+var upload = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+            cb(null, true);
+        } else {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+        }
+    }
+});
+
+
+//Schema
+const ImageSchema = new mongoose.Schema({
+    profileImg: String
+})
+
+const ImageModel = new mongoose.model('Imagees',ImageSchema);
+
+
+app.get('/',(req,res)=>{
+   res.send('welcome to our API!')
+})
+
+app.get('/imagees',async(req,res)=>{
+    const imagees = await ImageModel.find();
+    res.json(imagees);
+})
+
+app.post('/imagees',upload.single('profileImg'),async(req,res)=>{
+    const url = req.protocol + '://' + req.get('host');
+    const newImage = new ImageModel({
+        profileImg: url + '/uploads/' + req.file.filename
+    })
+    newImage.save().then(result => {
+        res.status(201).json({
+            message: "Image posted successfully!",
+            userCreated: newImage
+        })
+    }).catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            });
+    })
+})

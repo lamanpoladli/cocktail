@@ -1,11 +1,13 @@
 import AdminHome from "../pages/Admin/AdminHome";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import AdminLogin from "../pages/Admin/AdminLogin";
+import Reservations from "../pages/Admin/Reservations";
+import AddImage from "../pages/Admin/AddImage";
 
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import NotFound from "../pages/Main/NotFound";
-import Reservations from "../pages/Admin/Reservations";
+
 
 export const ROUTES = [
     //Main Root - user side
@@ -39,6 +41,10 @@ export const ROUTES = [
             {
                 path:'reservations',
                 element:<Reservations/>
+            },
+            {
+                path:'imagees',
+                element:<AddImage/>
             }
         ]
     }

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./_index.scss";
-const index = () => {
+import { getAll } from "../../../api/requests";
+const Index = () => {
+  const[imagees,setImageess]=useState([]);
+  useEffect(()=>{
+    getAll().then((res)=>{
+      setImageess(res);
+    })
+  },[])
   return (
     <>
       <section className="sectionWord">
@@ -16,7 +23,9 @@ const index = () => {
             <p>Sunday:<br></br>4:00 pm - 2:00 am</p>
             <p><i>Visit us</i></p>
             </div>
-            <div className="colImage"><img src="https://bridge269.qodeinteractive.com/wp-content/uploads/2019/10/single-img-1.jpg" alt="" /></div>
+            {imagees && imagees.map((image)=>{
+              return(<div key={image._id} className="colImage"><img  src={image.profileImg} alt="" /></div>)
+            })}
             <div className="colWord">
             <h6><i>The best offer</i></h6>
             <h1>Happy hour</h1>
@@ -32,4 +41,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
