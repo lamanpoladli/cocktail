@@ -17,7 +17,6 @@ export const getImageById = async (id)=>{
     return globaldata
 }
 
-
 export const postImage = (payload) => {
   axios.post(`${BASE_URL}/images`, payload);
 };

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import "./_index.scss";
 import { getAll} from "../../../api/requests";
+
+
+
 const Index = () => {
   const[imagees,setImagees]=useState([]);
   useEffect(()=>{
@@ -26,7 +29,6 @@ const Index = () => {
               return(<div key={image._id} className="colImage"><img  src={image.profileImg} alt="" /></div>
               )
             })}
-            
             <div className="colWord">
             <h6><i>The best offer</i></h6>
             <h1>Happy hour</h1>

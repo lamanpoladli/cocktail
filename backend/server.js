@@ -145,7 +145,7 @@ app.use("/reservation", reservationRoute);
 
 
 
-
+//Section3 image ------------------------------------------------------------------
 app.use(bodyParser.urlencoded({extended:false}))
 const DIR = './uploads/';
 app.use('/uploads', express.static('uploads'));
@@ -215,3 +215,7 @@ app.delete('/imagees/:id',async(req,res)=>{
         message: 'deleted successfully!'
     })
 })
+//----------------------------------------------------------------------------
+
+
+

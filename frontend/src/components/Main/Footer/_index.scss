@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+footer{
+    padding: 4% 0px;
+    background-color: black;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.containerFooter{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.colFooter{
+    margin-top: 3%;
+    width: 25%;
+    h3{
+        margin-bottom: 8%;
+    }
+    p{
+        font-size: 17px;
+        color: rgb(226, 226, 226);
+    }
+    .footerIcons{
+        display: flex;
+        align-items: center;
+        gap: 0.5%;
+        margin-top: 5%;
+        margin-left: 2%;
+    }
+}
+.footerImage{
+    display: flex;
+    flex-wrap: wrap;
+    .imageCol{
+        width: 33.333%;
+        height: 100px;
+        padding: 2%;
+        div{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 90px;
+                height: 90px;
+            }
+        }
+        
+    }
+}
+@media screen and (max-width: 1600px) {
+    .colFooter{
+        width: 50% !important;
+    }
+    .imageCol{
+        margin-top: 5%;
+        width: 50% !important;
+        height: 200px !important;
+        img{
+            width: 200px !important;
+            height: 200px !important;
+        }
+    }
+    
+  }
+  @media screen and (max-width: 1200px) {
+    .colFooter{
+        width: 100% !important;
+        text-align: center;
+    }
+    .imageCol{
+        margin-top: 5%;
+        width: 50% !important;
+        height: 200px !important;
+        img{
+            width: 200px !important;
+            height: 200px !important;
+        }
+    }
+    
+    .footerIcons{
+        margin: 0 auto !important;
+        width: 28%;
+    }
+
+  }
+  @media screen and (max-width: 600px) {
+    .colFooter{
+        width: 100% !important;
+        text-align: center;
+    }
+    .imageCol{
+        margin-top: 5%;
+        width: 100% !important;
+        height: 200px !important;
+        img{
+            width: 200px !important;
+            height: 200px !important;
+        }
+    }
+    
+    .footerIcons{
+        margin: 0 auto !important;
+        width: 50%;
+    }
+
+  }
