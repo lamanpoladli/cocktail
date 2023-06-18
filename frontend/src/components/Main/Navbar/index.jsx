@@ -43,8 +43,8 @@ const Index = () => {
             <ul>
               <li class="my-element"><Link className="link" to={"/"}>Home</Link></li>
               <li class="my-element"><Link className="link" to={"/about"}>About</Link></li>
-              <li class="my-element">Menu</li>
-              <li class="my-element">Reservations</li>
+              <li class="my-element"><Link className="link" to={"/menu"}>Menu</Link></li>
+              <li class="my-element"><Link className="link" to={"/reserv"}>Reservation</Link></li>
               <li class="my-element">Contact</li>
             </ul>
           </Col>

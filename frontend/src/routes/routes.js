@@ -8,6 +8,8 @@ import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import NotFound from "../pages/Main/NotFound";
 import About from "../components/Main/About";
+import Menu from "../components/Main/Menu";
+import ReservPage from "../components/Main/ReservPage";
 
 
 export const ROUTES = [
@@ -27,6 +29,14 @@ export const ROUTES = [
             {
                 path:'about',
                 element: <About/>
+            },
+            {
+                path:'menu',
+                element: <Menu/>
+            },
+            {
+                path:'reserv',
+                element: <ReservPage/>
             }
         ]
     },

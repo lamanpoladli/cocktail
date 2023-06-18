@@ -15,8 +15,8 @@ const Index = () => {
     };
   return (
     <>
-    <div>
-      <img src="https://bridge269.qodeinteractive.com/wp-content/uploads/2019/10/about-title-img.jpg" alt="" />
+    <div className='about'>
+      <h1>About</h1>
     </div>
     <section className="section1">
       <div className="containerSec1">
