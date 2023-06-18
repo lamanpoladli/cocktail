@@ -52,21 +52,21 @@ const Index = () => {
             <div>
               <ul>
                 <li>
-                  <FacebookOutlinedIcon style={{ color: "white" }} />
+                  <Link to={"https://www.facebook.com/QodeInteractive/"}><FacebookOutlinedIcon style={{ color: "white" }} /></Link>
                 </li>
                 <li>
-                  <InstagramIcon />
+                  <Link to={"https://www.instagram.com/qodeinteractive/"}><InstagramIcon style={{ color: "white" }}/></Link>
                 </li>
                 <li>
-                  <TwitterIcon />
+                  <Link to={"https://twitter.com/QodeInteractive"}><TwitterIcon style={{ color: "white" }} /></Link>
                 </li>
                 <li>
                   <FavoriteIcon />
                 </li>
               </ul>
-              <button class="button-86" role="button">
+              <Link style={{textDecoration:"none"}} to={"/reserv"}><button class="button-86" role="button">
                 Book a table
-              </button>
+              </button></Link>
             </div>
           </Col>
           <Col className="col4">

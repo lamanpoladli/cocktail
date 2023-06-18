@@ -2,6 +2,7 @@ import React from 'react'
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "./_index.scss";
+import { Link } from "react-router-dom";
 
 const index = () => {
     const images = [
@@ -24,10 +25,7 @@ const index = () => {
             <span>
               <p>Exclusive drink services</p>
               <h1 class="animate__animated animate__bounce">Cocktail stage evenings</h1>
-
-              <button class="button-89" role="button">
-                View more
-              </button>
+                <Link to="/about"><button class="button-89" role="button">View more</button></Link>
             </span>
           </div>
         </div>

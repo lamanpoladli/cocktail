@@ -3,6 +3,7 @@ import "./_index.scss";
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarViewMonthIcon from '@mui/icons-material/CalendarViewMonth';
+import { Link } from "react-router-dom";
 const index = () => {
   return (
     <footer>
@@ -25,10 +26,10 @@ const index = () => {
         </div>
         <div className="colFooter">
         <h3>Pages</h3>
-        <p>Home</p>
-        <p>Reservations</p>
-        <p>Menu</p>
-        <p>Contact</p>
+        <p><Link className="link" to={"/"}>Home</Link></p>
+        <p><Link className="link" to={"/reserv"}>Reservation</Link></p>
+        <p><Link className="link" to={"/menu"}>Menu</Link></p>
+        <p><Link className="link" to={"/contact"}>Contact</Link></p>
         </div>
         <div className="colFooter">
           <h3>Opening hours</h3>
