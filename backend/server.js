@@ -10,6 +10,8 @@ const multer = require("multer");
 const uuid = require('uuid');
 const fs = require('fs');
 const reservationModel = require('./models/reservationModel');
+const category_router = require('./routes/categoryRoutes');
+const product_router = require('./routes/productRoutes');
 dotenv.config();
 app.use(bodyParser.json());
 app.use(cors());
@@ -218,4 +220,10 @@ app.delete('/imagees/:id',async(req,res)=>{
 //----------------------------------------------------------------------------
 
 
+
+
+//Categories
+app.use('/categories/', category_router)
+//Products
+app.use('/products/', product_router)
 

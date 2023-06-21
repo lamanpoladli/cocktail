@@ -3,13 +3,14 @@ import AdminRoot from "../pages/Admin/AdminRoot";
 import AdminLogin from "../pages/Admin/AdminLogin";
 import Reservations from "../pages/Admin/Reservations";
 import AddImage from "../pages/Admin/AddImage";
+import AddCategory from "../pages/Admin/AddCategory";
 
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
 import NotFound from "../pages/Main/NotFound";
-import About from "../components/Main/About";
-import Menu from "../components/Main/Menu";
-import ReservPage from "../components/Main/ReservPage";
+import About from "../pages/Main/About/index";
+import Menu from "../pages/Main/Menu";
+import ReservPage from "../pages/Main/ReservPage/index";
 
 
 export const ROUTES = [
@@ -60,6 +61,10 @@ export const ROUTES = [
             {
                 path:'imagees',
                 element:<AddImage/>
+            },
+            {
+                path:'categories',
+                element:<AddCategory/>
             }
         ]
     }
