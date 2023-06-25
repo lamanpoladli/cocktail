@@ -6,29 +6,29 @@ import { useCategoryContext } from "../../../context/categoryContext";
 import { useFormik } from "formik";
 
 const Index = () => {
-  const[categories,setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
-  const[loading,setLoading] = useState(true);
+  // const[categories,setCategories] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // const[loading,setLoading] = useState(true);
 
-  useEffect(() => {
-    getAllCategories().then((res) => {
-      setCategories(res);
-      setLoading(false);
-    });
-  },[]); 
-  useEffect(() => {
-    getAllProducts().then((res) => {
-      console.log(res);
-      console.log(categories);
-      setProducts(res);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getAllCategories().then((res) => {
+  //     setCategories(res);
+  //     setLoading(false);
+  //   });
+  // },[]); 
+  // useEffect(() => {
+  //   getAllProducts().then((res) => {
+  //     console.log(res);
+  //     console.log(categories);
+  //     setProducts(res);
+  //   });
+  // }, []);
   return (
     <>
       <div className="menu">
         <h1>Menu</h1>
       </div>
-      {categories &&
+      {/* {categories &&
             categories.map((category) => {
               return (
       <div key={category._id}>
@@ -42,7 +42,7 @@ const Index = () => {
         </div>
         ))}
       </div>
-            )})}
+            )})} */}
 
       <section className="menuStatic">
         <div></div>

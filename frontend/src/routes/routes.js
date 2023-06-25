@@ -1,6 +1,7 @@
 import AdminHome from "../pages/Admin/AdminHome";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import AdminLogin from "../pages/Admin/AdminLogin";
+import Dashboard from "../pages/Admin/Dashboard";
 import Reservations from "../pages/Admin/Reservations";
 import AddImage from "../pages/Admin/AddImage";
 import AddCategory from "../pages/Admin/AddCategory";
@@ -48,11 +49,11 @@ export const ROUTES = [
         children: [
             {
                 path:'',
-                element: <AdminLogin/>
+                element:<AdminHome/>
             },
             {
-                path:'home',
-                element:<AdminHome/>
+                path:'login',
+                element: <AdminLogin/>
             },
             {
                 path:'reservations',
