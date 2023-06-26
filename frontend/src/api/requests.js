@@ -114,19 +114,19 @@ export const postProduct =  (payload)=>{
 
 //register
 export const signUp = (payload)=>{
-  axios.post(`${BASE_URL}/admin/register`,payload)
+  axios.post(`${BASE_URL}/register`,payload)
 }
 
 //login
 export const signIn = async(payload)=>{
-  const response =  await axios.post(`${BASE_URL}/admin/login`,payload);
+  const response =  await axios.post(`${BASE_URL}/login`,payload);
   return response.data;
 }
 
 //users
 export const getUsers = async(token)=>{
   let users;
-  await axios.get(`${BASE_URL}/admin/users`,{
+  await axios.get(`${BASE_URL}/users`,{
       headers: {
           'x-access-token': token
       }

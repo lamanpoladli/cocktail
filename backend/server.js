@@ -22,7 +22,7 @@ mongoose.connect(DB_CONNECTION.replace("<password>",DB_PASSWORD))
 .then(()=> console.log("Mongo DB Connected!"))
 
 
-app.use('/users/',user_router)
+app.use('/',user_router)
 
 PORT = process.env.PORT;
 app.listen(PORT, () => {

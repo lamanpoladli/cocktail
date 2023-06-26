@@ -16,6 +16,10 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
+import { useUserContext } from "../../../context/userContext";
+import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -159,6 +163,8 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+  const [user, setUser] = useUserContext();
+  const navigate = useNavigate();
 
   return (
     <Box  sx={{ flexGrow: 1 }}>
@@ -178,14 +184,26 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography>
+          {user ? (
+            <>
+              
+              <Button onClick={async()=>{
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                await setUser(null);
+                navigate('/admin');
+              }} color="inherit">
+                Logout
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button color="inherit">
+                <Link to="/admin">Login</Link>
+              </Button>
+              
+            </>
+          )}
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

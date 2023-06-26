@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
 
-  <UserContextProvider><RouterProvider router={routes}></RouterProvider> </UserContextProvider>
+  <UserContextProvider><RouterProvider router={routes} /></UserContextProvider>
   </>
 );
 
