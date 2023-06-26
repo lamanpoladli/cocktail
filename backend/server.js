@@ -10,6 +10,7 @@ const fs = require('fs');
 const reservationModel = require('./models/reservationModel');
 const category_router = require('./routes/categoryRoutes');
 const product_router = require('./routes/productRoutes');
+const user_router = require('./routes/userRoutes');
 dotenv.config();
 app.use(bodyParser.json());
 app.use(cors());
@@ -21,8 +22,7 @@ mongoose.connect(DB_CONNECTION.replace("<password>",DB_PASSWORD))
 .then(()=> console.log("Mongo DB Connected!"))
 
 
-app.use('/',user_router)
-
+app.use('/users/',user_router)
 
 PORT = process.env.PORT;
 app.listen(PORT, () => {
@@ -52,7 +52,6 @@ app.listen(PORT, () => {
 //     })
 
 const reservationRoute = require("./routes/reservationRoutes");
-const user_router = require('./routes/userRouter');
 app.use("/reservation", reservationRoute);
 
 

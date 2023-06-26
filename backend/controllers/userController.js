@@ -1,4 +1,4 @@
-const Users = require('../models/userModel')
+const UsersModel = require('../models/userModel')
  const bcrypt = require('bcrypt')
  const jwt = require('jsonwebtoken')
 
@@ -26,8 +26,8 @@ const usersController = {
     postRegister: async(req,res)=>{
     const{username,email,password} = req.body;
 
-    const existedUsername = await Users.findOne({username: username});
-    const existedMail = await Users.findOne({email: email});
+    const existedUsername = await UsersModel.findOne({username: username});
+    const existedMail = await UsersModel.findOne({email: email});
     if (existedUsername) {
         res.json({message: 'username already exists!'});
         return;
@@ -51,7 +51,7 @@ const usersController = {
 //login
     postLogin: async(req,res)=>{
     const{username,password} = req.body;
-    const existedUsername = await Users.findOne({username: username});
+    const existedUsername = await UsersModel.findOne({username: username});
     if (!existedUsername) {
         res.json({auth: false,message: 'username not found!'});
         return;
@@ -80,7 +80,7 @@ const usersController = {
 },
 AdminPostLogin : async(req,res)=>{
     const{username,password} = req.body;
-    const existedUsername = await Users.findOne({username: username});
+    const existedUsername = await UsersModel.findOne({username: username});
     if (!existedUsername) {
         res.json({auth: false,message: 'username not found!'});
         return;
@@ -110,7 +110,7 @@ AdminPostLogin : async(req,res)=>{
     }
 },
 getAllUsers : async(req,res)=>{
-    const users = await Users.find();
+    const users = await UsersModel.find();
     res.json({users: users});
 }
 }
