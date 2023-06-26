@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../../components/Admin/Navbar'
-import Footer from '../../components/Admin/Footer'
 import { Outlet } from 'react-router-dom'
 import { useUserContext } from '../../context/userContext'
 import AdminLogin from "./AdminLogin"
@@ -15,7 +14,6 @@ const AdminRoot = () => {
     <>
     <Navbar/>
     <Outlet/>
-    <Footer/>
     </>
    ) : (
     <AdminLogin/>
