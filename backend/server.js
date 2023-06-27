@@ -11,6 +11,7 @@ const reservationModel = require('./models/reservationModel');
 const category_router = require('./routes/categoryRoutes');
 const product_router = require('./routes/productRoutes');
 const user_router = require('./routes/userRoutes');
+const nodemailer = require("nodemailer");
 dotenv.config();
 app.use(bodyParser.json());
 app.use(cors());

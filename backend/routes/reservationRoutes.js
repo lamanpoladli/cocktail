@@ -8,6 +8,8 @@ reservation_router.get('/',reservationController.get)
 
 //post Image
 reservation_router.post('/',reservationController.post)
+reservation_router.put('/:id',reservationController.edit)
+reservation_router.delete('/:id',reservationController.delete)
 
 
 
