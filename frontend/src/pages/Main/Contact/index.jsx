@@ -7,6 +7,9 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import * as yup from 'yup';
 import { useFormik } from 'formik'
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CalendarViewMonthIcon from '@mui/icons-material/CalendarViewMonth';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -66,7 +69,27 @@ export default function Suggestions() {
     <div className='contact'>
       <h1>Contact</h1>
     </div>
-      <main>
+    <section className="contactSec">
+      <div className='row'>
+        <div className='contactCol'>
+          <p>Contact us</p>
+          <h1>Get in touch</h1>
+          <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br></br> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut<br></br> enim ad minim veniam, quis nostrud exercitation ullamco laboris<br></br> nisi ut aliquip ex ea com.</h6>
+          <div className='footerIcons'>
+            <div><WatchLaterIcon/></div>
+            <div>Mon-Sun: 09am - 09pm</div>
+          </div>
+          <div className='footerIcons'>
+            <div><LocationOnIcon/></div>
+            <div>1611 Linden Avenue, London</div>
+          </div>
+          <div className='footerIcons'>
+            <div><CalendarViewMonthIcon/></div>
+            <div>301-382-4311, 301-461-9671</div>
+          </div>
+        </div>
+        <div className='contactCol'>
+        <main>
         <form
           ref={form}
           onSubmit={sendEmail} >
@@ -82,7 +105,7 @@ export default function Suggestions() {
               value={formik.values.user_name}
             />
             {formik.errors.user_name && formik.touched.user_name ? (
-              <span style={{ color: "#bb221a" }}>{formik.errors.user_name}</span>
+              <span style={{ color: "white" }}>{formik.errors.user_name}</span>
             ) : <span style={{ visibility: "hidden" }}>error message</span>}
           </div>
           <div className='input-div' >
@@ -96,7 +119,7 @@ export default function Suggestions() {
               value={formik.values.user_username}
             />
             {formik.errors.user_username && formik.touched.user_username ? (
-              <span style={{ color: "#bb221a" }}>{formik.errors.user_username}</span>
+              <span style={{ color: "white" }}>{formik.errors.user_username}</span>
             ) : <span style={{ visibility: "hidden" }}>error message</span>}
           </div>
           <div className='input-div'>
@@ -110,7 +133,7 @@ export default function Suggestions() {
               value={formik.values.user_email}
             />
             {formik.errors.user_email && formik.touched.user_email ? (
-              <span style={{ color: "#bb221a" }}>{formik.errors.user_email}</span>
+              <span style={{ color: "white" }}>{formik.errors.user_email}</span>
             ) : <span style={{ visibility: "hidden" }}>error message</span>}
           </div>
           <div className='input-div'>
@@ -118,7 +141,7 @@ export default function Suggestions() {
               name="message"
               className="form-input"
               id="outlined-multiline-static"
-              label="Müştərilərimizin düşüncələri önəmlidir"
+              label="Düşüncələriniz"a
               multiline
               rows={4}
               onChange={formik.handleChange}
@@ -126,7 +149,7 @@ export default function Suggestions() {
               value={formik.values.message}
             />
             {formik.errors.message && formik.touched.message ? (
-              <span style={{  color: "#bb221a" }}>{formik.errors.message}</span>
+              <span style={{  color: "white" }}>{formik.errors.message}</span>
             ) : <span style={{ visibility: "hidden" }}>error message</span>}
           </div>
           <div className='input-div'>
@@ -148,6 +171,9 @@ export default function Suggestions() {
           </div>
         </form>
       </main>
+        </div>
+      </div>
+    </section>
     </>
   )
 }
