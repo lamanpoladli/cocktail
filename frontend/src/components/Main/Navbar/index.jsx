@@ -45,7 +45,7 @@ const Index = () => {
               <li class="my-element"><Link className="link" to={"/about"}>About</Link></li>
               <li class="my-element"><Link className="link" to={"/menu"}>Menu</Link></li>
               <li class="my-element"><Link className="link" to={"/reserv"}>Reservation</Link></li>
-              <li class="my-element">Contact</li>
+              <li class="my-element"><Link className="link" to={"/contact"}>Contact</Link></li>
             </ul>
           </Col>
           <Col className="col3" xs={6} md={4}>

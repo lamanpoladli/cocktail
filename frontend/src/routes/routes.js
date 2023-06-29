@@ -1,7 +1,6 @@
 import AdminHome from "../pages/Admin/AdminHome";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import AdminLogin from "../pages/Admin/AdminLogin";
-import Dashboard from "../pages/Admin/Dashboard";
 import Reservations from "../pages/Admin/Reservations";
 import AddImage from "../pages/Admin/AddImage";
 import AddCategory from "../pages/Admin/AddCategory";
@@ -12,6 +11,7 @@ import NotFound from "../pages/Main/NotFound";
 import About from "../pages/Main/About/index";
 import Menu from "../pages/Main/Menu";
 import ReservPage from "../pages/Main/ReservPage/index";
+import Contact from "../pages/Main/Contact/index";
 
 
 export const ROUTES = [
@@ -39,6 +39,10 @@ export const ROUTES = [
             {
                 path:'reserv',
                 element: <ReservPage/>
+            },
+            {
+                path:'contact',
+                element: <Contact/>
             }
         ]
     },
