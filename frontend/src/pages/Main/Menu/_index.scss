@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 .menu {
   width: 100%;
   height: 550px;
@@ -18,5 +19,37 @@
     background: url("https://bridge269.qodeinteractive.com/wp-content/uploads/2019/10/menu-img-1.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
+  }
+}
+.menuSec{
+  background-color: black;
+}
+.menuRow{
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  .col12{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .top{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 3%;
+    }
+    .bottom{
+      width: 50%;
+      text-align: start;
+      padding-left: 4%;
+      margin-bottom: 1%;
+      h4{
+        display: inline;
+        font-family: 'IBM Plex Sans', sans-serif;
+      }
+      h6{
+        display: inline;
+        font-size: 11px;
+      }
+    }
   }
 }

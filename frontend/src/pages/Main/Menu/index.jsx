@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
 import "./_index.scss";
-import { deleteCategoryByID, getAllCategories, getAllProducts, getCategoryByID, getCategoryProducts, postProduct } from "../../../api/requests";
-import { useCategoryContext } from "../../../context/categoryContext";
-import { useFormik } from "formik";
+import { getAllCategories, getAllProducts, } from "../../../api/requests";
+
 
 const Index = () => {
   const[categories,setCategories] = useState([]);
@@ -24,27 +23,38 @@ const Index = () => {
       setProducts(res);
     });
   }, []);
+  
 
   return (
     <>
       <div className="menu">
         <h1>Menu</h1>
       </div>
-      {categories &&
+      <section className="menuSec">
+            <div className="menuRow">
+              <div className="col12">
+              {categories &&
             categories.map((category) => {
               return (
-      <div key={category._id}>
-        <h1>{category.name}</h1>
-        <p>{category.description}</p>
-        {products.filter(x=>x.categoryID === category._id).map((product) => (
-        <div key={product._id}>
-          <p>{product.name}</p>
-          <p>{product.title}</p>
-          <p>{product.price}</p>
-        </div>
-        ))}
-      </div>
-            )})}
+                <>
+                <div key={category._id} className="top">
+                <h5>{category.description}</h5>
+                <h1>{category.name}</h1>
+                </div>
+                {products.filter(x=>x.categoryID === category._id).map((product) => (
+                <div key={product._id} className="bottom">
+                  <h4>{product.name}<h6>{
+                     Array.from({ length: (100-(product.name.length+product.price.toString().length+1)) }, (_, i) => <span key={i}>.</span>)
+
+                    }<h4>${product.price}</h4></h6></h4>
+                  <p>{product.title}</p>
+                </div>
+                ))}
+                </>
+                )})}
+              </div>
+            </div>
+      </section>
 
       <section className="menuStatic">
         <div></div>
