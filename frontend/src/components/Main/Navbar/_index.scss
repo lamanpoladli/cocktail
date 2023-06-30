@@ -3,8 +3,11 @@ header{
   color: white;
 }
 .link{
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
+}
+.hamburgerMenu{
+  color:white;
 }
 nav {
   height: 100px;
@@ -17,25 +20,24 @@ nav {
   }
 }
 .col1 {
-  width: 33.33%;
+  width: 33.333%;
   height: 100%;
   display: flex;
   align-items: center;
   padding-left: 4%;
-
   h1 {
     font-family: "Philosopher", sans-serif;
     font-size: 30px;
   }
 }
 .col2 {
-  width: 33.33%;
+  width: 33.333%;
   height: 100%;
   display: flex;
   align-items: center;
   ul {
     display: flex;
-    gap: 4%;
+    gap: 2%;
     li {
       list-style: none;
       font-size: 20px;
@@ -43,7 +45,7 @@ nav {
   }
 }
 .col3 {
-  width: 33.33%;
+  width:33.333%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -157,7 +159,7 @@ nav {
   margin: 0px ;
   width: 200px;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1360px) {
   .col1{
     width: 50%;
   }

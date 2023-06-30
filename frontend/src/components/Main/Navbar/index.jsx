@@ -46,6 +46,7 @@ const Index = () => {
               <li class="my-element"><Link className="link" to={"/menu"}>Menu</Link></li>
               <li class="my-element"><Link className="link" to={"/reserv"}>Reservation</Link></li>
               <li class="my-element"><Link className="link" to={"/contact"}>Contact</Link></li>
+              <li class="my-element"><Link className="link" to={"/team"}>Team</Link></li>
             </ul>
           </Col>
           <Col className="col3" xs={6} md={4}>
@@ -81,7 +82,7 @@ const Index = () => {
             </Button>
             <Menu
               id="basic-menu"
-              style={{backgroundColor:"rgba(255, 255, 255, 0.533)"}}
+              style={{backgroundColor:"rgba(255, 255, 255, 0.533)",color:"white"}}
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
@@ -105,7 +106,9 @@ const Index = () => {
               <MenuItem  onClick={handleClose}>
                 Contact
               </MenuItem>
-              
+              <MenuItem  onClick={handleClose}>
+                Team
+              </MenuItem>
               </div>
               
             </Menu>

@@ -12,6 +12,7 @@ import About from "../pages/Main/About/index";
 import Menu from "../pages/Main/Menu";
 import ReservPage from "../pages/Main/ReservPage/index";
 import Contact from "../pages/Main/Contact/index";
+import Team from "../pages/Main/Team/index";
 
 
 export const ROUTES = [
@@ -43,6 +44,10 @@ export const ROUTES = [
             {
                 path:'contact',
                 element: <Contact/>
+            },
+            {
+                path:'team',
+                element: <Team/>
             }
         ]
     },
