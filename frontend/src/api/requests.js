@@ -157,3 +157,16 @@ export const getAllFooter = async () => {
 export const editFooter = (id, payload) => {
   axios.put(`${BASE_URL}/footer/${id}`, payload);
 }
+
+// Profil-----------------------------------------------------------------------------------------
+export const getAllProfil = async () => {
+  let globalData;
+  await axios.get(`${BASE_URL}/profil`)
+      .then((res) => {
+          globalData = res.data.data;
+      })
+  return globalData;
+}
+export const editProfil = (id, payload) => {
+  axios.put(`${BASE_URL}/profil/${id}`, payload);
+}

@@ -13,6 +13,7 @@ const category_router = require('./routes/categoryRoutes');
 const product_router = require('./routes/productRoutes');
 const user_router = require('./routes/userRoutes');
 const Footer_router = require('./routes/footerRoutes')
+const Profil_router = require('./routes/profilRoutes')
 
 
 const nodemailer = require("nodemailer");
@@ -43,6 +44,8 @@ app.use('/categories/', category_router)
 app.use('/products/', product_router)
 // Footer
 app.use('/footer/', Footer_router)
+// Profil
+app.use('/profil/', Profil_router)
 
 
 //Section3 image ------------------------------------------------------------------

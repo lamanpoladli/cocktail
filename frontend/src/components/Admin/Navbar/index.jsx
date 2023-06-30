@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,6 +20,7 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { getAllProfil } from "../../../api/requests";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -87,7 +89,12 @@ export default function PrimarySearchAppBar() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const [profil, setProfil] = useState([]);
+  useEffect(() => {
+    getAllProfil().then((res) => {
+      setProfil(res);
+    });
+  }, []);
 
 
   const menuId = "primary-search-account-menu";
@@ -150,15 +157,21 @@ export default function PrimarySearchAppBar() {
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
+      {profil &&
+              profil.map((data) => {
+                return (
         <IconButton
+        key={data._id}
           size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <img src="https://cdn-icons-png.flaticon.com/512/3231/3231671.png" alt="" />
+          <img src={data.imageURL} alt="" />
         </IconButton>
+          )
+        })}
         <p>Profile</p>
       </MenuItem>
     </Menu>
@@ -233,7 +246,11 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            {profil &&
+              profil.map((data) => {
+                return (
             <IconButton
+            key={data._id}
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -241,8 +258,10 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               color="inherit"
             >
-              <img style={{width:"50px",height:"50px",borderRadius:"50%"}} src="https://cdn-icons-png.flaticon.com/512/3231/3231671.png" alt="" />
+              <img style={{width:"50px",height:"50px",borderRadius:"50%"}} src={data.imageURL} alt="" />
             </IconButton>
+                )
+              })}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
