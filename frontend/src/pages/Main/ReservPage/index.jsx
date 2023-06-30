@@ -70,18 +70,18 @@ const Index = () => {
             value={formik.values.clock}
             name="clock"
           >
-            <option value="1">6:30 am</option>
-            <option value="2">7:00 am</option>
-            <option value="3">7:30 am</option>
-            <option value="3">8:00 am</option>
-            <option value="3">8:30 am</option>
-            <option value="3">9:00 am</option>
-            <option value="3">9:30 am</option>
-            <option value="3">10:00 am</option>
-            <option value="3">10:30 am</option>
-            <option value="3">11:00 am</option>
-            <option value="3">11:30 am</option>
-            <option value="3">12:00 am</option>
+            <option value="6:30 am">6:30 am</option>
+            <option value="7:00 am">7:00 am</option>
+            <option value="7:30 am">7:30 am</option>
+            <option value="8:00 am">8:00 am</option>
+            <option value="8:30 am">8:30 am</option>
+            <option value="9:00 am">9:00 am</option>
+            <option value="9:30 am">9:30 am</option>
+            <option value="10:00 am">10:00 am</option>
+            <option value="10:30 am">10:30 am</option>
+            <option value="11:00 am">11:00 am</option>
+            <option value="11:30 am">11:30 am</option>
+            <option value="12:00 am">12:00 am</option>
           </Form.Select>
           <span>{formik.errors.clock}</span>
           <input 

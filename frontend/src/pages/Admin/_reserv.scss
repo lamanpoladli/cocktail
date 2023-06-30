@@ -4,13 +4,40 @@
     display: flex;
     flex-wrap: wrap;
     div{
-        width: 23%;
-        height: 300px;
+        width: 31%;
+        height: 400px;
         border: solid;
         margin: 3% 1%;
         background-color: black;
         color: white;
         border-radius: 20px;
         padding: 1%;
+        button{
+            width: 50%;
+            height: 50px;
+            border-radius: 30px;
+            border: none;
+        }
     }
 }
+@media screen and (max-width: 1500px) {
+    .containerData{
+        width: 80%;
+        div{
+            width: 48%;
+            text-align: center;
+        }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .containerData{
+        width: 100%;
+        div{
+            width: 100%;
+            text-align: center;
+            button{
+                width: 30%;
+            }
+        }
+    }
+  }

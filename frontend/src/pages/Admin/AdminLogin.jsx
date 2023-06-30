@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import { signIn } from "../../api/requests";
 import Swal from "sweetalert2";
 import { useUserContext } from "../../context/userContext";
+import "./_login.scss"
 
 
 const Login = () => {
@@ -46,9 +47,11 @@ const Login = () => {
         alignItems: "center",
       }}
     >
-      <form onSubmit={formik.handleSubmit}>
-        <div>
+      
+        <div className="loginAdmin">
+        <form onSubmit={formik.handleSubmit}>
           <TextField
+          className="formAdmin"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             name="username"
@@ -58,9 +61,9 @@ const Login = () => {
             label="Username"
             variant="outlined"
           />
-        </div>
-        <div>
+        
           <TextField
+          className="formAdmin"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             name="password"
@@ -70,8 +73,9 @@ const Login = () => {
             label="Password"
             variant="outlined"
           />
-        </div>
+        
         <Button
+        className="submitAdmin"
           type="submit"
           style={{ display: "block", margin: "30px auto" }}
           variant="contained"
@@ -79,52 +83,11 @@ const Login = () => {
         >
           Login
         </Button>
-      </form>
+        </form>
+        </div>
+      
     </div>
   );
 };
 
 export default Login;
-// import { Button } from '@mui/material';
-// import React from 'react'
-// import Container from 'react-bootstrap/Container';
-// import Navbar from 'react-bootstrap/Navbar';
-// import { Link, useNavigate } from 'react-router-dom';
-// import { useUserContext } from '../../context/userContext';
-// const AdminLogin = () => {
-//   const navigate = useNavigate();
-//   const [user, setUser] = useUserContext()
-//   return (
-//     <Container>
-//         <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
-//         <Navbar.Toggle />
-//         <Navbar.Collapse className="justify-content-end">
-//           {user === null ? <>
-//             <Link to="/admin/login">Login Admin</Link>
-//           </> : <>
-//             <Navbar.Text>
-//               Signed in as: <p>{user.username}</p>
-//             </Navbar.Text>
-//             {user && <>
-//               <Button onClick={async () => {
-//                 localStorage.removeItem('token');
-//                 localStorage.removeItem('user');
-//                 await setUser(null);
-//                 // await setUser("");
-
-//                 navigate('/admin/login')
-//                 // navigate("http://localhost:3000/admin")
-//               }} color="inherit">
-//                 Logout
-//               </Button>
-//             </>}
-//           </>}
-
-//         </Navbar.Collapse>
-
-//         {/* <Nav.Link href="#link"><Link>Add Slider</Link></Nav.Link> */}
-//       </Container>
-//   )
-// }
-
-// export default AdminLogin
