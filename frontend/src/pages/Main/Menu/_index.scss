@@ -53,3 +53,32 @@
     }
   }
 }
+@media screen and (max-width: 1600px) {
+  .menuRow{
+    width: 90%;
+    .bottom{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .menuRow{
+    width: 100%;
+    .bottom{
+      width: 100% !important;
+      text-align: center !important;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .menuRow{
+    width: 100%;
+    .bottom{
+      width: 100% !important;
+      text-align: center !important;
+      h6{
+        font-size: 5px !important;
+      }
+    }
+  }
+}

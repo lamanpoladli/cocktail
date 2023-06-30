@@ -19,6 +19,7 @@ img{
     width: 65%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
 }
 .colSec1{
     width: 50%;
@@ -47,3 +48,23 @@ img{
         height: 600px;
     }
 }
+@media screen and (max-width: 1400px) {
+    .containerSec1{
+        width: 80%;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    .containerSec1{
+        width: 90%;
+    }
+    
+  }
+  @media screen and (max-width: 1015px) {
+    .containerSec1{
+        width: 70%;
+    }
+    .colSec1{
+        width: 100% !important;
+        color: white;
+    }
+  }

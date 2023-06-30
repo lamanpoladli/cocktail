@@ -26,6 +26,7 @@ const Index = () => {
       personCount: "",
       date: "",
       clock: "",
+      email: "",
     },
     onSubmit: handleSubmit,
   });
@@ -83,6 +84,16 @@ const Index = () => {
             <option value="3">12:00 am</option>
           </Form.Select>
           <span>{formik.errors.clock}</span>
+          <input 
+          type="email"
+          className="select" 
+          placeholder="email daxil edin:"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+          name="email"
+           />
+           <span>{formik.errors.email}</span>
           <Button className="button" variant="primary" type="submit">
             Book a table
           </Button>{" "}

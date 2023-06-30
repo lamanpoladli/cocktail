@@ -75,15 +75,15 @@ export default function Suggestions() {
           <p>Contact us</p>
           <h1>Get in touch</h1>
           <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br></br> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut<br></br> enim ad minim veniam, quis nostrud exercitation ullamco laboris<br></br> nisi ut aliquip ex ea com.</h6>
-          <div className='footerIcons'>
+          <div className='footerIcon'>
             <div><WatchLaterIcon/></div>
             <div>Mon-Sun: 09am - 09pm</div>
           </div>
-          <div className='footerIcons'>
+          <div className='footerIcon'>
             <div><LocationOnIcon/></div>
             <div>1611 Linden Avenue, London</div>
           </div>
-          <div className='footerIcons'>
+          <div className='footerIcon'>
             <div><CalendarViewMonthIcon/></div>
             <div>301-382-4311, 301-461-9671</div>
           </div>

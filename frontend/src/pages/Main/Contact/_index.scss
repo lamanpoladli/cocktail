@@ -30,7 +30,7 @@
         }
     }
 }
-.footerIcons{
+.footerIcon{
     display: flex;
     align-items: center;
     gap: 0.5%;
@@ -133,4 +133,27 @@ main {
 
 .form-inp-err {
     border: 1px solid red;
+}
+
+@media screen and (max-width: 1250px) {
+    .contactSec{
+        .row{
+            width: 80%;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .contactSec{
+        .row{
+            width: 80%;
+            .contactCol{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    .footerIcon{
+        width: 40%;
+        margin: 0 auto;
+    }
 }
