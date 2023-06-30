@@ -118,7 +118,7 @@ export const postProduct =  (payload)=>{
 
 
 
-
+//Login Register--------------------------------------------------------------------------
 
 //register
 export const signUp = (payload)=>{
@@ -142,4 +142,18 @@ export const getUsers = async(token)=>{
       users = res.data;
   })
   return users;
+}
+
+
+// Footer-----------------------------------------------------------------------------------------
+export const getAllFooter = async () => {
+  let globalData;
+  await axios.get(`${BASE_URL}/footer`)
+      .then((res) => {
+          globalData = res.data.data;
+      })
+  return globalData;
+}
+export const editFooter = (id, payload) => {
+  axios.put(`${BASE_URL}/footer/${id}`, payload);
 }

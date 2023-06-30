@@ -7,10 +7,14 @@ const mongoose = require('mongoose');
 const multer = require("multer");
 const uuid = require('uuid');
 const fs = require('fs');
+
 const reservationModel = require('./models/reservationModel');
 const category_router = require('./routes/categoryRoutes');
 const product_router = require('./routes/productRoutes');
 const user_router = require('./routes/userRoutes');
+const Footer_router = require('./routes/footerRoutes')
+
+
 const nodemailer = require("nodemailer");
 dotenv.config();
 app.use(bodyParser.json());
@@ -22,45 +26,23 @@ DB_PASSWORD = process.env.DB_PASSWORD
 mongoose.connect(DB_CONNECTION.replace("<password>",DB_PASSWORD))
 .then(()=> console.log("Mongo DB Connected!"))
 
-
-app.use('/',user_router)
-
 PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`NODE APP listening on port ${PORT}`);
 });
 
-// app.post('/reservation', async (req, res) => {
-//     const { personCount, date, clock } = req.body;
-//   const newReservation = new reservationModel({ 
-//     // id: crypto.randomUUID(),
-//     personCount: personCount,
-//     date: date,
-//     clock: clock
-//   });
-//   await newReservation.save();
-//   res.status(201).send("created");
-    
-    
-//   })
 
-//   app.get('/reservation', async (req, res) => {
-//     const reservations = await reservationModel.find();
-//       res.status(200).send({
-//         data: reservations,
-//         message: "data get success!",
-//       });
-//     })
+app.use('/',user_router)
 
 const reservationRoute = require("./routes/reservationRoutes");
 app.use("/reservation", reservationRoute);
 
-
-
-
-
-
-
+//Categories
+app.use('/categories/', category_router)
+//Products
+app.use('/products/', product_router)
+// Footer
+app.use('/footer/', Footer_router)
 
 
 //Section3 image ------------------------------------------------------------------
@@ -136,10 +118,4 @@ app.delete('/imagees/:id',async(req,res)=>{
 //----------------------------------------------------------------------------
 
 
-
-
-//Categories
-app.use('/categories/', category_router)
-//Products
-app.use('/products/', product_router)
 

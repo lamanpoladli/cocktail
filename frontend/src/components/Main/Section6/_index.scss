@@ -1,0 +1,23 @@
+.section6{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .col4Sec{
+        width: 33.333%;
+        color: white;
+        img{
+            width: 100%;
+        }
+        iframe{
+            height: 100%;
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .col4Sec{
+        width: 100% !important;
+        iframe{
+            height: 530px !important;
+        }
+    }
+  }
