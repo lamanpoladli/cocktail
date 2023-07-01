@@ -82,8 +82,8 @@ export const postCategory = (payload) => {
   axios.post(`${BASE_URL}/categories`, payload);
 };
 //edit category
-export const editCategory = (id,payload)=>{
-  axios.put(`${BASE_URL}/categories/${id}`,payload);
+export const editCategory = async(id,payload)=>{
+  await axios.put(`${BASE_URL}/categories/${id}`,payload);
 }
 
 

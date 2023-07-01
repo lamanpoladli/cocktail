@@ -15,6 +15,7 @@ import ReservPage from "../pages/Main/ReservPage/index";
 import Contact from "../pages/Main/Contact/index";
 import Team from "../pages/Main/Team/index";
 import Wishlist from "../pages/Main/Wishlist/index";
+import EditCategory from "../pages/Admin/EditCategory";
 
 
 export const ROUTES = [
@@ -85,6 +86,10 @@ export const ROUTES = [
             {
                 path:'addcategory',
                 element:<AddCategory/>
+            },
+            {
+                path:'categories/edit/:id',
+                element:<EditCategory/>
             }
         ]
     }

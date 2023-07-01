@@ -115,7 +115,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin"}>Admin Home</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/"}>Home Page</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin"}>Admin Page</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/reservations"}>Reservations</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/imagees"}>Multer</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/categories"}>Categories</Link></MenuItem>

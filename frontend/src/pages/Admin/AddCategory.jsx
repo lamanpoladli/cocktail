@@ -36,36 +36,47 @@ const AddCategory = () => {
       <Helmet>
         <title>Add New Category</title>
       </Helmet>
-      <form onSubmit={formik.handleSubmit}>
-        <input
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.name}
-          placeholder="enter name"
-          type="text"
-          name="name"
-        />
-        {formik.errors.name && formik.touched.name && (
+      <div class="login-box">
+  <h2>Add New Category</h2>
+  <form onSubmit={formik.handleSubmit}>
+    <div class="user-box">
+      <input
+      onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+            name="name"
+            type="text"
+            placeholder="Name"
+            required=""/>
+      <label>Name</label>
+      {formik.errors.name && formik.touched.name && (
           <span>{formik.errors.name}</span>
         )}
-        <input
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.description}
-          placeholder="enter description"
-          type="text"
-          name="description"
-        />
-        {formik.errors.description && formik.touched.description && (
+    </div>
+    <div class="user-box">
+    <input
+      onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.description}
+            name="description"
+            type="text"
+            placeholder="Description"
+            required=""/>
+      <label>Description</label>
+      {formik.errors.description && formik.touched.description && (
           <span>{formik.errors.description}</span>
         )}
-        <button
-          disabled={Object.keys(formik.errors).length !== 0 ? true : false}
-          type="submit"
-        >
-          Add New Category
-        </button>
-      </form>
+    </div>
+    <button type="submit" href="#">
+        
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </button>
+  </form>
+</div>
     </>
   );
 };

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getAllCategories } from '../../api/requests';
+import { deleteCategorytByID, getAllCategories } from '../../api/requests';
 import "./_categories.scss";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Categories = () => {
     const[categories,setCategories] = useState([]);
@@ -16,6 +17,7 @@ const Categories = () => {
       
   return (
     <>
+    <Link to={"/admin/addcategory"}><button className="editbtn marginbtn">Add Category</button></Link>
    <h2>Categories</h2>
 
 <div className="sectionCategorries">
@@ -38,15 +40,37 @@ const Categories = () => {
       <div class="col col-1" data-label="Job Id">{category._id}</div>
       <div class="col col-2" data-label="Customer Name">{category.name}</div>
       <div class="col col-3" data-label="Amount">{category.description}</div>
-      <div class="col col-3" data-label="Amount"><button>Edit</button></div>
-      <div class="col col-3" data-label="Amount"><button>Delete</button></div>
+      <div class="col col-3" data-label="Amount"><button className="editbtn"><Link className="editLink" to={`/admin/categories/edit/${category._id}`}>Edit</Link></button></div>
+      <div class="col col-3" data-label="Amount"><button
+      onClick={()=>{
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            deleteCategorytByID(category._id).then((res)=>{
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            })
+            setCategories(categories.filter((x)=>x._id !== category._id))
+          }
+        })
+       }}
+      className="editbtn">Delete</button></div>
     </li>
     </>
     )})}
   </ul>
 </div>
 </div>
-<Link to={"/admin/addcategory"}><button>Add Category</button></Link>
     </>
   )
 }
