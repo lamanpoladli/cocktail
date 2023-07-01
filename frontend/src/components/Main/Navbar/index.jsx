@@ -62,7 +62,7 @@ const Index = () => {
                   <Link to={"https://twitter.com/QodeInteractive"}><TwitterIcon style={{ color: "white" }} /></Link>
                 </li>
                 <li>
-                  <FavoriteIcon />
+                  <Link style={{color:"white"}} to={"/wishlist"}><FavoriteIcon /></Link>
                 </li>
               </ul>
               <Link style={{textDecoration:"none"}} to={"/reserv"}><button class="button-86" role="button">

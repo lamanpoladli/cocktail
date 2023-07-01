@@ -26,7 +26,7 @@ const Index = () => {
                         <div className="frontside">
                             <div className="card">
                             
-                                <div key={data._id} className="card-body text-center">
+                                <div key={data._id}  className="card-body text-center">
                                     <p><img className=" img-fluid" src={data.imageURL} alt="card image"/></p>
                                     <h4 className="card-title">{data.name}</h4>
                                     <p className="card-text">{data.title}</p>
@@ -48,7 +48,7 @@ const Index = () => {
                     </div>
                       );
                     })}
-                </div>
+                      </div>
             </div>
             
         </div>

@@ -13,6 +13,7 @@ import Menu from "../pages/Main/Menu";
 import ReservPage from "../pages/Main/ReservPage/index";
 import Contact from "../pages/Main/Contact/index";
 import Team from "../pages/Main/Team/index";
+import Wishlist from "../pages/Main/Wishlist/index";
 
 
 export const ROUTES = [
@@ -48,6 +49,10 @@ export const ROUTES = [
             {
                 path:'team',
                 element: <Team/>
+            },
+            {
+                path:'wishlist',
+                element: <Wishlist/>
             }
         ]
     },

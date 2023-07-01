@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import "./_index.scss";
 import { getAllCategories, getAllProducts, } from "../../../api/requests";
+import Swal from "sweetalert2";
 
 
 const Index = () => {
@@ -23,6 +24,26 @@ const Index = () => {
       setProducts(res);
     });
   }, []);
+
+  const handleClick = (e) => {
+    const id = e.target.id;
+    const product = products.find(x=>x._id === id);
+    if(localStorage.getItem('wishlist')){
+      let wishListStorage = JSON.parse(localStorage.getItem('wishlist'))
+      wishListStorage.push(product);
+      localStorage.setItem('wishlist',JSON.stringify(wishListStorage))
+    }
+    else{
+      localStorage.setItem('wishlist',JSON.stringify([product]));
+    }
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Əlavə olundu!`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
   
 
   return (
@@ -46,7 +67,7 @@ const Index = () => {
                   <h4>{product.name}<h6>{
                      Array.from({ length: (100-(product.name.length+product.price.toString().length+1)) }, (_, i) => <span key={i}>.</span>)
 
-                    }<h4>${product.price}</h4></h6></h4>
+                    }<h4>${product.price}</h4></h6></h4>{<FavoriteBorderIcon id={product._id} onClick={handleClick} />}
                   <p>{product.title}</p>
                 </div>
                 ))}
