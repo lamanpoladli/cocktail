@@ -27,10 +27,18 @@ const Index = () => {
 
   const handleClick = (e) => {
     const id = e.target.id;
+    console.log(id)
     const product = products.find(x=>x._id === id);
+
     if(localStorage.getItem('wishlist')){
       let wishListStorage = JSON.parse(localStorage.getItem('wishlist'))
-      wishListStorage.push(product);
+      if(wishListStorage.find(x=>x._id === product._id) !== undefined){
+        const index = wishListStorage.indexOf(product);
+        wishListStorage.splice(index, 1);
+      }
+      else{
+        wishListStorage.push(product);
+      }
       localStorage.setItem('wishlist',JSON.stringify(wishListStorage))
     }
     else{
@@ -60,16 +68,22 @@ const Index = () => {
                 <>
                 <div key={category._id} className="top">
                 <h5>{category.description}</h5>
+                
                 <h1>{category.name}</h1>
                 </div>
                 {products.filter(x=>x.categoryID === category._id).map((product) => (
+                <>
                 <div key={product._id} className="bottom">
+                {<FavoriteBorderIcon style={{width:"50px",height:"50px"}} id={product._id} onClick={handleClick} />}
                   <h4>{product.name}<h6>{
                      Array.from({ length: (100-(product.name.length+product.price.toString().length+1)) }, (_, i) => <span key={i}>.</span>)
 
-                    }<h4>${product.price}</h4></h6></h4>{<FavoriteBorderIcon id={product._id} onClick={handleClick} />}
+                    }<h4>${product.price}</h4></h6></h4>
                   <p>{product.title}</p>
+                  
                 </div>
+                
+                </>
                 ))}
                 </>
                 )})}

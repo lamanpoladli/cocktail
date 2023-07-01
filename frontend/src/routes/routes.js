@@ -4,6 +4,7 @@ import AdminLogin from "../pages/Admin/AdminLogin";
 import Reservations from "../pages/Admin/Reservations";
 import AddImage from "../pages/Admin/AddImage";
 import AddCategory from "../pages/Admin/AddCategory";
+import Categories from "../pages/Admin/Categories";
 
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
@@ -79,6 +80,10 @@ export const ROUTES = [
             },
             {
                 path:'categories',
+                element:<Categories/>
+            },
+            {
+                path:'addcategory',
                 element:<AddCategory/>
             }
         ]

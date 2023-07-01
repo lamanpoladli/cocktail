@@ -34,7 +34,7 @@ const AddCategory = () => {
   return (
     <>
       <Helmet>
-        <title>Add New Artist</title>
+        <title>Add New Category</title>
       </Helmet>
       <form onSubmit={formik.handleSubmit}>
         <input

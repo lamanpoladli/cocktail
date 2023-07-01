@@ -1,8 +1,10 @@
 import React from 'react'
-
+import "./_home.scss"
 const AdminHome = () => {
   return (
-    <div>AdminHome</div>
+    <div className='adminHome'>
+    <h1>Admin Home Page</h1>
+  </div>
   )
 }
 

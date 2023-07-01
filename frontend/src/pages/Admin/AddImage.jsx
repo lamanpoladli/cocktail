@@ -38,9 +38,9 @@ const AddImage = () => {
       }}
     >
       <form onSubmit={formik.handleSubmit} encType="multipart/form-data" method="POST">
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex',width:"100%"}}>
 
-        <Button ref={buttonRef} style={{marginLeft:'20px'}} variant="contained" component="label">
+        <Button ref={buttonRef} style={{margin:'25px 0px',width:"400px",height:"60px",backgroundColor:"black"}} variant="contained" component="label">
           Upload File
           <input value={formik.values.profileImg}
           onChange={(e)=>{
@@ -54,7 +54,7 @@ const AddImage = () => {
         {formik.errors.profileImg && formik.touched.profileImg && <div style={{color:'red'}}>{formik.errors.profileImg}</div>}
 
         </div>
-        <Button style={{display:'block',margin:'25px auto'}} type="submit" variant="outlined" color="success">Add image</Button>
+        <Button style={{display:'block',margin:'25px 0px',width:"400px",height:"60px"}} type="submit" variant="outlined" color="success">Add image</Button>
       </form>
      
     </div>
