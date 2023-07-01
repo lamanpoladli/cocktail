@@ -34,7 +34,11 @@ const Index = () => {
                       </span>
                     </div>
                     <div>
-                      <button class="button-48" role="button">
+                      <button
+                       onClick={async()=>{
+                localStorage.removeItem('wishlist');
+              }} 
+              class="button-48" role="button">
                         <span class="text">Delete Product from Wishlist</span>
                       </button>
                     </div>
