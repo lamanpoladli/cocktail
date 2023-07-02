@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../../components/Admin/Navbar'
 import { Outlet } from 'react-router-dom'
 import { useUserContext } from '../../context/userContext'
-import AdminLogin from "./AdminLogin"
+import AdminLogin from "./AdminLogin/AdminLogin"
 
 const AdminRoot = () => {
   const [user] = useUserContext()

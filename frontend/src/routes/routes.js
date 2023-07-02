@@ -1,10 +1,11 @@
-import AdminHome from "../pages/Admin/AdminHome";
+import AdminHome from "../pages/Admin/AdminHome/AdminHome";
 import AdminRoot from "../pages/Admin/AdminRoot";
-import AdminLogin from "../pages/Admin/AdminLogin";
-import Reservations from "../pages/Admin/Reservations";
+import AdminLogin from "../pages/Admin/AdminLogin/AdminLogin";
+import Reservations from "../pages/Admin/AdminReservations/Reservations";
 import AddImage from "../pages/Admin/AddImage";
-import AddCategory from "../pages/Admin/AddCategory";
-import Categories from "../pages/Admin/Categories";
+import AddCategory from "../pages/Admin/AddCategory/AddCategory";
+import Categories from "../pages/Admin/Categories/Categories";
+import Products from "../pages/Admin/Products/index";
 
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
@@ -15,7 +16,9 @@ import ReservPage from "../pages/Main/ReservPage/index";
 import Contact from "../pages/Main/Contact/index";
 import Team from "../pages/Main/Team/index";
 import Wishlist from "../pages/Main/Wishlist/index";
-import EditCategory from "../pages/Admin/EditCategory";
+import EditCategory from "../pages/Admin/EditCategory/EditCategory";
+import AddProduct from "../pages/Admin/AddProduct";
+import EditProduct from "../pages/Admin/EditProduct";
 
 
 export const ROUTES = [
@@ -90,6 +93,18 @@ export const ROUTES = [
             {
                 path:'categories/edit/:id',
                 element:<EditCategory/>
+            },
+            {
+                path:'products',
+                element:<Products/>
+            },
+            {
+                path:'addproduct',
+                element:<AddProduct/>
+            },
+            {
+                path:'products/edit/:id',
+                element:<EditProduct/>
             }
         ]
     }

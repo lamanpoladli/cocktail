@@ -41,6 +41,22 @@ const productController = {
         .send({ data: deletedProduct, message: "product deleted successfully!" });
     }
   },
+  edit: async (req, res) => {
+    const id = req.params.id;
+    const { name, title,price,categoryID  } = req.body;
+    console.log("name: ", name);
+    const existedProduct = await ProductModel.findByIdAndUpdate(id, {
+      name: name,
+      title: title,
+      price: price,
+      categoryID: categoryID,
+    });
+    if (existedProduct == undefined) {
+      res.status(404).send("product not found!");
+    } else {
+      res.status(200).send(`${name} updated successfully!`);
+    }
+  },
 };
 
 module.exports  = productController

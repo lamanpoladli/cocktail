@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { deleteCategorytByID, getAllCategories } from '../../api/requests';
+import { deleteCategorytByID, getAllCategories } from '../../../api/requests';
 import "./_categories.scss";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'

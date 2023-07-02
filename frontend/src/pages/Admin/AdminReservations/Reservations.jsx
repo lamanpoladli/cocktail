@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { getAllReservations, editReservation, deleteReservation } from "../../api/requests";
+import { getAllReservations, editReservation, deleteReservation } from "../../../api/requests";
 import "./_reserv.scss";
 import PersonIcon from '@mui/icons-material/Person';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';

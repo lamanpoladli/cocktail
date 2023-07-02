@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom";
 import {useFormik} from 'formik'
 import * as yup from 'yup'
-import { editCategory, getCategoryByID } from '../../api/requests';
+import { editCategory, getCategoryByID } from '../../../api/requests';
 import "./_editcategory.scss";
 
 const EditCategory = () => {
@@ -19,7 +19,7 @@ const EditCategory = () => {
     getCategoryByID(id).then((res) => {
       setCategory(res);
       formik.name = res.name;
-      formik.description = res.title;
+      formik.description = res.description;
     });
   }, [id]);
   const handleEdit = async (values, actions) => {

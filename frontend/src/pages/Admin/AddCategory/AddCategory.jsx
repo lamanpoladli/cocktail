@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useFormik } from "formik";
-import { CategoryValidation } from "../../validation/categorySchema";
-import { postCategory } from "../../api/requests";
+import { CategoryValidation } from "../../../validation/categorySchema";
+import { postCategory } from "../../../api/requests";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { useCategoryContext } from "../../context/categoryContext";
+import { useCategoryContext } from "../../../context/categoryContext";
 
 const AddCategory = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const AddCategory = () => {
       timer: 1500
     })
     actions.resetForm();
-    navigate('/menu');
+    navigate('/admin/categories');
   };
   const formik = useFormik({
     initialValues: {

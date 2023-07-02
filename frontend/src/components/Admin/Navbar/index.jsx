@@ -120,6 +120,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/reservations"}>Reservations</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/imagees"}>Multer</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/categories"}>Categories</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/products"}>Products</Link></MenuItem>
     </Menu>
   );
 
