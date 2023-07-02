@@ -16,11 +16,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Input } from 'antd';
 
 const Products = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search,setSearch]=useState('')
   useEffect(() => {
     getAllCategories().then((res) => {
       setCategories(res);
@@ -72,6 +74,7 @@ const Products = () => {
       <Link to={"/admin/addproduct"}>
         <button className="editbtn marginbtn">Add Product</button>
       </Link>
+      <Input className="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search" />
       <h2>Products</h2>
     
       <TableContainer style={{width:"90%",margin:"0 auto"}} component={Paper}>
@@ -88,7 +91,11 @@ const Products = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-          {products.map((product) => (
+          {products
+          .filter((item)=>{
+            return search.toLocaleLowerCase() === "" ? item : item.name.toLocaleLowerCase().includes(search)
+          })
+          .map((product) => (
             <StyledTableRow key={product._id}>
               <StyledTableCell component="th" scope="row">
               {product._id}

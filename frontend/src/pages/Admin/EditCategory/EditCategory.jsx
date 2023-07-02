@@ -8,7 +8,7 @@ import "./_editcategory.scss";
 
 const EditCategory = () => {
   const navigate = useNavigate();
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState();
   const [category, setCategory] = useState({});
   const { id } = useParams();
   const Validation = yup.object().shape({
@@ -16,12 +16,16 @@ const EditCategory = () => {
     description: yup.string().required("Required"),
   });
   useEffect(() => {
-    getCategoryByID(id).then((res) => {
-      setCategory(res);
-      formik.name = res.name;
-      formik.description = res.description;
-    });
+    async function getCategory(id){
+      getCategoryByID(id).then((res) => {
+        setCategory(res);
+        formik.name = res.name;
+        formik.description = res.description;
+      });
+    }
+    getCategory(id);
   }, [id]);
+
   const handleEdit = async (values, actions) => {
     await editCategory(id, values);
     setCategories(values);
@@ -38,8 +42,8 @@ const EditCategory = () => {
   });
   return (
     <>
-<div class="login-box">
-  <h2>Edit Category</h2>
+{category &&  <div class="login-box">
+  <h2>{category.name} edit</h2>
   <form onSubmit={formik.handleSubmit}>
     <div class="user-box">
       <input
@@ -50,6 +54,7 @@ const EditCategory = () => {
             type="text"
             placeholder="Name"
             required=""/>
+            
       <label>Name</label>
     </div>
     <div class="user-box">
@@ -72,7 +77,7 @@ const EditCategory = () => {
       Submit
     </button>
   </form>
-</div>
+</div>}
 </>
   )
 };

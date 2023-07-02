@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import "./_index.scss";
 
 const Index = () => {
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    console.log(e.target.id)
+    let wishList = JSON.parse(localStorage.getItem("wishlist"));
+    wishList = wishList.filter(x=> x._id !== e.target.id);
+    console.log(wishList)
+    localStorage.setItem("wishlist",JSON.stringify(wishList));
+  }  
   return (
     <>
       <div className="wishlist">
@@ -35,12 +43,10 @@ const Index = () => {
                       </span>
                     </div>
                     <div>
-                      <button
-                       onClick={async()=>{
-                localStorage.removeItem('wishlist');
-              }} 
+                      <button  
               class="button-48" role="button">
-                        <span class="text">Delete Product<br></br> from Wishlist</span>
+                        <span class="text" id={x._id}
+                       onClick={deleteHandler}>Delete Product<br></br> from Wishlist</span>
                       </button>
                     </div>
                   </div>

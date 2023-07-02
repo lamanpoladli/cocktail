@@ -91,7 +91,7 @@ export const ROUTES = [
                 element:<AddCategory/>
             },
             {
-                path:'categories/edit/:id',
+                path:'categories/:id',
                 element:<EditCategory/>
             },
             {

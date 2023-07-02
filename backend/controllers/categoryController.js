@@ -57,7 +57,6 @@ const categoryController = {
   edit: async (req, res) => {
     const id = req.params.id;
     const { name, description } = req.body;
-    console.log("name: ", name);
     const existedCategory = await CategoryModel.findByIdAndUpdate(id, {
       name: name,
       description: description,

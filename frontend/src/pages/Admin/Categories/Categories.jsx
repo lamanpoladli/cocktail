@@ -3,10 +3,12 @@ import { deleteCategorytByID, getAllCategories } from '../../../api/requests';
 import "./_categories.scss";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Input } from 'antd';
 
 const Categories = () => {
     const[categories,setCategories] = useState([]);
     const[loading,setLoading] = useState(true);
+    const [search,setSearch]=useState('')
     useEffect(() => {
         getAllCategories().then((res) => {
           setCategories(res);
@@ -14,11 +16,13 @@ const Categories = () => {
           setLoading(false);
         });
       },[]); 
-      
+    
   return (
     <>
     <Link to={"/admin/addcategory"}><button className="editbtn marginbtn">Add Category</button></Link>
+    <Input className="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search" />
    <h2>Categories</h2>
+   
 
 <div className="sectionCategorries">
     
@@ -33,14 +37,18 @@ const Categories = () => {
       <div class="col col-3"><h5>Delete</h5></div>
     </li>
     {categories &&
-            categories.map((category) => {
+            categories
+            .filter((item)=>{
+              return search.toLocaleLowerCase() === "" ? item : item.name.toLocaleLowerCase().includes(search)
+            })
+            .map((category) => {
               return (
                 <>
     <li key={category._id} class="table-row">
       <div class="col col-1" data-label="Job Id">{category._id}</div>
       <div class="col col-2" data-label="Customer Name">{category.name}</div>
       <div class="col col-3" data-label="Amount">{category.description}</div>
-      <div class="col col-3" data-label="Amount"><button className="editbtn"><Link className="editLink" to={`/admin/categories/edit/${category._id}`}>Edit</Link></button></div>
+      <div class="col col-3" data-label="Amount"><Link className="editLink" to={`/admin/categories/${category._id}`}><button className="editbtn">Edit</button></Link></div>
       <div class="col col-3" data-label="Amount"><button
       onClick={()=>{
         Swal.fire({

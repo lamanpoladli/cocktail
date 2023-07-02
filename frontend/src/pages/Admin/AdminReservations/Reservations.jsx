@@ -7,6 +7,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
+import Swal from "sweetalert2";
 // import { useRef } from 'react';
 // import emailjs from '@emailjs/browser';
 
@@ -28,11 +29,25 @@ const Reservations = () => {
     let email = e.target.previousElementSibling.previousElementSibling.getAttribute("id")
     editReservation(id,{isAccepted:true,email:email})
     setIsAccepted(true);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `Accepted!`,
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
   const handleDelete = (e) => {
     let id = e.target.parentNode.getAttribute("id")
     deleteReservation(id);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `Deleted!`,
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
   return (
     <>
