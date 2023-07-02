@@ -104,9 +104,9 @@ export const getAllProducts = async() => {
   })
   return globalData
 }
-export const getProductByID = async (ID) => {
+export const getProductByID = async (id) => {
   let globalData;
-  await axios.get(`${BASE_URL}/products/${ID}`).then((res) => {
+  await axios.get(`${BASE_URL}/products/${id}`).then((res) => {
     globalData = res.data;
   });
   return globalData;
@@ -115,7 +115,7 @@ export const deleteProductByID = async(id)=>{
   let deletedProduct;
   await axios.delete(`${BASE_URL}/products/${id}`)
   .then(res=>{
-    deletedProduct = res.data.data;
+    deletedProduct = res.data;
   })
   return deletedProduct;
 }

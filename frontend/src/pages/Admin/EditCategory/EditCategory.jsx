@@ -8,27 +8,30 @@ import "./_editcategory.scss";
 
 const EditCategory = () => {
   const navigate = useNavigate();
-  const [categories, setCategories] = useState();
   const [category, setCategory] = useState({});
   const { id } = useParams();
   const Validation = yup.object().shape({
     name: yup.string().required("Required"),
     description: yup.string().required("Required"),
   });
-  useEffect(() => {
-    async function getCategory(id){
-      getCategoryByID(id).then((res) => {
-        setCategory(res);
-        formik.name = res.name;
-        formik.description = res.description;
-      });
-    }
-    getCategory(id);
-  }, [id]);
 
-  const handleEdit = async (values, actions) => {
-    await editCategory(id, values);
-    setCategories(values);
+    async function fetchData(){
+     const data = await getCategoryByID(id)
+     setCategory(data)
+     console.log(data);
+     formik.setValues({
+      name: data.name,
+      description: data.description,
+     })
+    }
+    useEffect(()=> {
+      fetchData()
+    },[id])
+
+
+  const handleSubmit = async (values, actions) => {
+    editCategory(id, values);
+    setCategory(values);
     actions.resetForm();
     navigate("/admin/categories");
   };
@@ -37,7 +40,7 @@ const EditCategory = () => {
       name: category.name,
       description: category.description,
     },
-    onSubmit: handleEdit,
+    onSubmit: handleSubmit,
     validationSchema: Validation,
   });
   return (
