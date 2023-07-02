@@ -13,7 +13,7 @@ const Index = () => {
     <div className='team'>
       <h1>Our Team</h1>
     </div>
-    <section id="team" className="pb-5">
+    <section id="team" className="pb-5 secc">
     <div className="container">
         <h5 className="section-title h1">OUR TEAM</h5>
         <div class="row">

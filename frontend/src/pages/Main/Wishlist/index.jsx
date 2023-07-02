@@ -9,6 +9,7 @@ const Index = () => {
       </div>
       <section className="WishlistSec">
         <div class="ag-format-container">
+          <div className="some">
           <div class="ag-courses_box">
             {JSON.parse(localStorage.getItem("wishlist")).map((x) => (
               <div key={x._id} class="ag-courses_item">
@@ -39,13 +40,14 @@ const Index = () => {
                 localStorage.removeItem('wishlist');
               }} 
               class="button-48" role="button">
-                        <span class="text">Delete Product from Wishlist</span>
+                        <span class="text">Delete Product<br></br> from Wishlist</span>
                       </button>
                     </div>
                   </div>
                 </a>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
