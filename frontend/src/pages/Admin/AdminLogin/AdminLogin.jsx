@@ -38,33 +38,30 @@ const Login = () => {
     onSubmit: handleSubmit,
   });
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "80vh",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      
-        <div className="loginAdmin">
-        <form onSubmit={formik.handleSubmit}>
-          <TextField
-          className="formAdmin"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            name="username"
-            value={formik.values.username}
-            type="text"
-            id="outlined-basic"
-            label="Username"
-            variant="outlined"
-          />
-        
-          <TextField
-          className="formAdmin"
-            onChange={formik.handleChange}
+
+    <div class="login-box">
+    <h2>Admin Login</h2>
+    <form onSubmit={formik.handleSubmit}>
+      <div class="user-box">
+        <input
+        onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="username"
+                value={formik.values.username}
+                type="text"
+                id="outlined-basic"
+                label="Username"
+                variant="outlined"
+              placeholder="UserName"
+              required=""/>
+        <label>UserName</label>
+        {formik.errors.username && formik.touched.username && (
+            <span>{formik.errors.username}</span>
+          )}
+      </div>
+      <div class="user-box">
+      <input
+               onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             name="password"
             value={formik.values.password}
@@ -72,21 +69,25 @@ const Login = () => {
             id="outlined-basic"
             label="Password"
             variant="outlined"
-          />
-        
-        <Button
-        className="submitAdmin"
-          type="submit"
-          style={{ display: "block", margin: "30px auto" }}
-          variant="contained"
-          color="warning"
-        >
-          Login
-        </Button>
-        </form>
-        </div>
-      
-    </div>
+              placeholder="password"
+              required=""/>
+        <label>Password</label>
+        {formik.errors.password && formik.touched.password && (
+            <span>{formik.errors.password}</span>
+          )}
+      </div>
+     
+      <button type="submit" href="#">
+          
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+  </div>
+
   );
 };
 

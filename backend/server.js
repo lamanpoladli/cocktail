@@ -14,6 +14,7 @@ const product_router = require('./routes/productRoutes');
 const user_router = require('./routes/userRoutes');
 const Footer_router = require('./routes/footerRoutes')
 const Profil_router = require('./routes/profilRoutes')
+const about_router = require('./routes/aboutRoutes')
 const Team_router = require('./routes/teamRoutes')
 
 
@@ -49,6 +50,8 @@ app.use('/footer/', Footer_router)
 app.use('/profil/', Profil_router)
 // Team
 app.use('/team/', Team_router)
+// About
+app.use('/about/', about_router)
 
 
 //Section3 image ------------------------------------------------------------------
@@ -75,7 +78,6 @@ var upload = multer({
         }
     }
 });
-
 
 //Schema
 const ImageSchema = new mongoose.Schema({

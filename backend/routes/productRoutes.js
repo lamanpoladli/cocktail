@@ -6,12 +6,6 @@ const productController = require('../controllers/productController')
 //get Category All Products
 product_router.get('/category/:id',productController.getCategoryAllProducts)
 
-// //get All Products
-// product_router.get('/', productController.getAllProducts)
-
-// //get product by id
-// product_router.get('/:id', productController.getByID)
-
 product_router.get('/', productController.getAllProducts)
 
 //get Product by ID

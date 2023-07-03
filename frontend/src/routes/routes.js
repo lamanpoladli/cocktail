@@ -6,6 +6,7 @@ import AddImage from "../pages/Admin/AddImage";
 import AddCategory from "../pages/Admin/AddCategory/AddCategory";
 import Categories from "../pages/Admin/Categories/Categories";
 import Products from "../pages/Admin/Products/index";
+import AboutAdmin from "../pages/Admin/About/index";
 
 import Home from "../pages/Main/Home";
 import MainRoot from "../pages/Main/MainRoot";
@@ -22,6 +23,7 @@ import EditProduct from "../pages/Admin/EditProduct";
 import Footer from "../pages/Admin/Footer";
 import AddFooter from "../pages/Admin/AddFooter";
 import EditFooter from "../pages/Admin/EditFooter";
+import EditAbout from "../pages/Admin/EditAbout";
 
 
 export const ROUTES = [
@@ -120,6 +122,14 @@ export const ROUTES = [
             {
                 path:'footer/:id',
                 element:<EditFooter/>
+            },
+            {
+                path:'about',
+                element:<AboutAdmin/>
+            },
+            {
+                path:'about/:id',
+                element:<EditAbout/>
             },
         ]
     }

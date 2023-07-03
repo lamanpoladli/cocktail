@@ -1,7 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import "./_index.scss"
+import { getAllAbouts } from '../../../api/about';
 
 const Index = () => {
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    getAllAbouts().then((res) => {
+      setAbout(res);
+    });
+  }, []);
   const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef(null);
 
@@ -19,17 +26,22 @@ const Index = () => {
       <h1>About</h1>
     </div>
     <section className="section1">
-      <div className="containerSec1">
+    {about &&
+          about.map((data) => {
+            return (
+      <div key={data._id}  className="containerSec1">
         <div className="colSec1">
-          <img src="https://bridge269.qodeinteractive.com/wp-content/uploads/2019/10/about-img-1.jpg" alt="" />
+          <img src={data.imageURL} alt="" />
         </div>
         <div className='colSec1 pad'>
-          <h5>Behind the scene</h5>
-          <h1>Our Story</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ni eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim an veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea nie commodo consequat. Duis aute irure in nulla pariatur Excepteur sint occaecat cupidatat non proiden sunt in culpa qui officia</p>
+          <h5>{data.name}</h5>
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
           <button className='buttonSec1'>View More</button>
         </div>
       </div>
+                  );
+                })}
     </section>
     <section className='section2'>
     <div>

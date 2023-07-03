@@ -95,19 +95,22 @@ const Index = () => {
                 <Link style={{color:"black",textDecoration:"none"}} to={"/"}>Home</Link>
               </MenuItem>
               <MenuItem  onClick={handleClose}>
-                About
+              <Link style={{color:"black",textDecoration:"none"}} to={"/about"}>About</Link>
               </MenuItem>
               <MenuItem  onClick={handleClose}>
-                Menu
+              <Link style={{color:"black",textDecoration:"none"}} to={"/menu"}>Menu</Link>
               </MenuItem>
               <MenuItem  onClick={handleClose}>
-                Reservations
+              <Link style={{color:"black",textDecoration:"none"}} to={"/reserv"}>Reservation</Link>
               </MenuItem>
               <MenuItem  onClick={handleClose}>
-                Contact
+              <Link style={{color:"black",textDecoration:"none"}} to={"/contact"}>Contact</Link>
               </MenuItem>
               <MenuItem  onClick={handleClose}>
-                Team
+              <Link style={{color:"black",textDecoration:"none"}} to={"/team"}>Team</Link>
+              </MenuItem>
+              <MenuItem  onClick={handleClose}>
+              <Link style={{color:"black",textDecoration:"none"}} to={"/wishlist"}>Wishlist</Link>
               </MenuItem>
               </div>
               

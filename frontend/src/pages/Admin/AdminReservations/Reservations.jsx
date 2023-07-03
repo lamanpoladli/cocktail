@@ -8,8 +8,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import Swal from "sweetalert2";
-// import { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
+
 
 
 const Reservations = () => {

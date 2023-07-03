@@ -10,30 +10,7 @@ const productController = {
       res.status(200).send(products);
     }
   },
-  // getAllProducts: async (req, res) => {
-  //   const products = await ProductModel.find();
-  //   if (products == undefined) {
-  //     res.status(404).send("products not found!");
-  //   } else {
-  //     res.status(200).send({
-  //       data: products,
-  //       message: "data get success!",
-  //     });
-  //   }
-  // },
-  // getByID: async (req, res) => {
-  //   const id = req.params.id;
-  //   const product = await ProductModel.findById(id);
-  //   console.log("product found: ", product);
-  //   if (!product) {
-  //     res.status(204).send("product not found!");
-  //   } else {
-  //     res.status(200).send({
-  //       data: product,
-  //       message: "data get success!",
-  //     });
-  //   }
-  // },
+  
 
   getAllProducts: async (req, res) => {
     const products = await ProductModel.find();

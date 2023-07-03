@@ -78,6 +78,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/categories"}>Categories</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/products"}>Products</Link></MenuItem>
       <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/footer"}>Footer</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link style={{color:"black",textDecoration:"none"}} to={"/admin/about"}>About</Link></MenuItem>
     </Menu>
   );
 
