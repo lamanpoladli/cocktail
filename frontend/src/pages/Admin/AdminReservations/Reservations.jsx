@@ -25,8 +25,8 @@ const Reservations = () => {
   }, []);
 
   const handleClick = (e) => {
-    let id = e.target.parentNode.getAttribute("id")
-    let email = e.target.previousElementSibling.previousElementSibling.getAttribute("id")
+    let id = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("id")
+    let email = e.target.parentNode.parentNode.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute("id")
     editReservation(id,{isAccepted:true,email:email})
     setIsAccepted(true);
     Swal.fire({
@@ -39,7 +39,7 @@ const Reservations = () => {
   }
 
   const handleDelete = (e) => {
-    let id = e.target.parentNode.getAttribute("id")
+    let id = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("id")
     deleteReservation(id);
     Swal.fire({
       position: 'top-end',
@@ -51,7 +51,7 @@ const Reservations = () => {
   }
   return (
     <>
-    <div className="containerData" >
+    {/* <div className="containerData" >
       {reservations &&
         reservations.map((reservation) => {
           return (
@@ -67,7 +67,41 @@ const Reservations = () => {
               </div>
           );
         })}
-        </div>
+        </div> */}
+
+<div class="bg">
+    <h1>Reservations</h1>
+  </div>
+  <div className="resDiv">
+  {reservations &&
+        reservations.map((reservation) => {
+          return (
+  <div id={reservation._id}  key={reservation._id} class="nft">
+    <div class='main'>
+      <img class='tokenImage' src="https://us.123rf.com/450wm/liudmilachernetska/liudmilachernetska2205/liudmilachernetska220501075/185591863-wooden-sign-reserved-on-gray-table-in-restaurant.jpg?ver=6" alt="NFT" />
+      <h2><PersonIcon /><b>Person:</b> {reservation.personCount} person</h2>
+      <p class='description'><CalendarMonthIcon style={{marginRight:"5%"}}/><b>Date:</b> {reservation.date}</p>
+      <p class='description'><QueryBuilderIcon style={{marginRight:"5%"}}/><b>Clock:</b> {reservation.clock}</p>
+      <p class='description' id={reservation.email}><MarkEmailUnreadIcon style={{marginRight:"5%"}}/><b>Email:</b> {reservation.email}</p>
+      <p class='description'>isAccepted: {reservation.isAccepted ? 'Accepted' : 'Not Accepted'}</p>
+      <hr />
+      <div class='creator'>
+      <div class="buttons">
+        <button onClick={handleClick}>Accept</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
+      {/* <button onClick={handleClick}>Accept</button>
+      <button onClick={handleDelete}>Delete</button> */}
+      </div>
+    </div>
+    
+  </div>
+     );
+    })}
+  
+  </div>
+  
+        
     </>
   );
 };
