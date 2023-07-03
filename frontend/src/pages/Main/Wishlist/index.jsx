@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./_index.scss";
 
 const Index = () => {
+  const [data, setData] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
+
   const deleteHandler = (e) => {
     e.preventDefault();
     console.log(e.target.id)
@@ -9,7 +12,14 @@ const Index = () => {
     wishList = wishList.filter(x=> x._id !== e.target.id);
     console.log(wishList)
     localStorage.setItem("wishlist",JSON.stringify(wishList));
+    setIsClicked(true);
   }  
+
+  useEffect(()=>{
+    console.log("Lemannnnn")
+    setData(JSON.parse(localStorage.getItem("wishlist")));
+    setIsClicked(false);
+  },[isClicked])
   return (
     <>
       <div className="wishlist">
@@ -19,7 +29,7 @@ const Index = () => {
         <div class="ag-format-container">
           <div className="some">
           <div class="ag-courses_box">
-            {JSON.parse(localStorage.getItem("wishlist")).map((x) => (
+            {data.map((x) => (
               <div key={x._id} class="ag-courses_item">
                 <a href="#" class="ag-courses-item_link">
                   <div class="ag-courses-item_bg"></div>
