@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./_index.scss";
-import { getAllCategories } from "../../../api/requests";
+import { getAllCategories } from "../../../api/categoryAndProduct";
 import { Link } from "react-router-dom";
 
 const Index = () => {

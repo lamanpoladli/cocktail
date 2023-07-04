@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useFormik } from "formik";
 import { CategoryValidation } from "../../../validation/categorySchema";
-import { postCategory } from "../../../api/requests";
+import { postCategory } from "../../../api/categoryAndProduct";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useCategoryContext } from "../../../context/categoryContext";

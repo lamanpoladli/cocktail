@@ -21,6 +21,7 @@ import AddProduct from "../pages/Admin/AddProduct";
 import EditProduct from "../pages/Admin/EditProduct";
 import Footer from "../pages/Admin/Footer";
 import AddFooter from "../pages/Admin/AddFooter";
+import EditFooter from "../pages/Admin/EditFooter";
 
 
 export const ROUTES = [
@@ -115,6 +116,10 @@ export const ROUTES = [
             {
                 path:'addfooter',
                 element:<AddFooter/>
+            },
+            {
+                path:'footer/:id',
+                element:<EditFooter/>
             },
         ]
     }

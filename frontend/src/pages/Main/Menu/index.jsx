@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./_index.scss";
-import { getAllCategories, getAllProducts } from "../../../api/requests";
+import { getAllCategories, getAllProducts } from "../../../api/categoryAndProduct";
 import Swal from "sweetalert2";
 
 const Index = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  console.log(loading);
 
   useEffect(() => {
     getAllCategories().then((res) => {

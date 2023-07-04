@@ -4,7 +4,7 @@ import {
   deleteProductByID,
   getAllCategories,
   getAllProducts,
-} from "../../../api/requests";
+} from "../../../api/categoryAndProduct";
 import "./_products.scss";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -20,8 +20,10 @@ import { Input } from 'antd';
 
 const Products = () => {
   const [categories, setCategories] = useState([]);
+  console.log(categories);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  console.log(loading);
   const [search,setSearch]=useState('')
   useEffect(() => {
     getAllCategories().then((res) => {
@@ -57,18 +59,8 @@ const Products = () => {
     },
   }));
 
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
 
-  const rows = [
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-  ];
-
+  
   return (
     <>
       <Link to={"/admin/addproduct"}>
@@ -104,7 +96,7 @@ const Products = () => {
               <StyledTableCell align="right">{product.name}</StyledTableCell>
               <StyledTableCell align="right">{product.title}</StyledTableCell>
               <StyledTableCell align="right">{product.price}</StyledTableCell>
-              <StyledTableCell align="right"><button className="editbtn"><Link className="editLink" to={`/admin/products/edit/${product._id}`}>Edit</Link></button></StyledTableCell>
+              <StyledTableCell align="right"><Link className="editLink" to={`/admin/products/edit/${product._id}`}><button className="editbtn">Edit</button></Link></StyledTableCell>
               <StyledTableCell align="right"><button
       onClick={()=>{
         Swal.fire({

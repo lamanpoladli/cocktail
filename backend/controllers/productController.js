@@ -1,4 +1,4 @@
-const ProductModel = require('../models/productModel');
+const ProductModel = require("../models/productModel");
 
 const productController = {
   getCategoryAllProducts: async (req, res) => {
@@ -10,14 +10,54 @@ const productController = {
       res.status(200).send(products);
     }
   },
+  // getAllProducts: async (req, res) => {
+  //   const products = await ProductModel.find();
+  //   if (products == undefined) {
+  //     res.status(404).send("products not found!");
+  //   } else {
+  //     res.status(200).send({
+  //       data: products,
+  //       message: "data get success!",
+  //     });
+  //   }
+  // },
+  // getByID: async (req, res) => {
+  //   const id = req.params.id;
+  //   const product = await ProductModel.findById(id);
+  //   console.log("product found: ", product);
+  //   if (!product) {
+  //     res.status(204).send("product not found!");
+  //   } else {
+  //     res.status(200).send({
+  //       data: product,
+  //       message: "data get success!",
+  //     });
+  //   }
+  // },
+
   getAllProducts: async (req, res) => {
     const products = await ProductModel.find();
     if (products == undefined) {
-      res.status(404).send("products not found!");
+      res.status(404).send("Products not found!");
     } else {
       res.status(200).send(products);
     }
   },
+  getByID: async (req, res) => {
+    const id = req.params.id;
+    // console.log(req.params)
+    const product = await ProductModel.findById(id);
+    // console.log("product found: ", product);
+    if (!product) {
+      res.status(204).send("Products not found!");
+    } else {
+      res.status(200).send({
+        data: product,
+        message: "data get success!",
+      });
+    }
+  },
+
   post: async (req, res) => {
     const { name, title, price, categoryID } = req.body;
 
@@ -36,14 +76,15 @@ const productController = {
     if (!deletedProduct) {
       res.status(404).send("product not found!");
     } else {
-      res
-        .status(203)
-        .send({ data: deletedProduct, message: "product deleted successfully!" });
+      res.status(203).send({
+        data: deletedProduct,
+        message: "product deleted successfully!",
+      });
     }
   },
   edit: async (req, res) => {
     const id = req.params.id;
-    const { name, title,price,categoryID  } = req.body;
+    const { name, title, price, categoryID } = req.body;
     console.log("name: ", name);
     const existedProduct = await ProductModel.findByIdAndUpdate(id, {
       name: name,
@@ -59,4 +100,4 @@ const productController = {
   },
 };
 
-module.exports  = productController
+module.exports = productController;

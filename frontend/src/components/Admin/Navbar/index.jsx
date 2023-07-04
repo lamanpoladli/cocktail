@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "../../../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-import { getAllProfil } from "../../../api/requests";
+import { getAllProfil } from "../../../api/profil";
 
 
 

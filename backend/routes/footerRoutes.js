@@ -8,6 +8,9 @@ Footer_router.get('/', FooterController.getAll)
 //post 
 Footer_router.post('/', FooterController.post)
 
+//get by id
+Footer_router.get('/:id', FooterController.getByID)
+
 //delete 
 Footer_router.delete('/:id', FooterController.delete)
 

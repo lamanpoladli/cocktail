@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
-import { postReservation } from "../../../api/requests";
+import { postReservation } from "../../../api/reservation";
 const Index = () => {
     const navigate = useNavigate();
   const handleSubmit = async (values, actions) => {

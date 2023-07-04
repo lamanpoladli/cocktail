@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useRef, useState } from "react";
-import { postImg } from "../../api/requests";
+import { postImg } from "../../api//image";
 import { useFormik } from "formik";
 import { ImageSchema } from "../../validation/image";
 

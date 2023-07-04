@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import "./_index.scss";
-import { getAll} from "../../../api/requests";
+import { getAll} from "../../../api/image";
 
 
 

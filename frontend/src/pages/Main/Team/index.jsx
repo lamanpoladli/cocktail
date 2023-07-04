@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./_index.scss";
-import { getAllTeam } from "../../../api/requests";
+import { getAllTeam } from "../../../api/team";
 const Index = () => {
     const [team, setTeam] = useState([]);
   useEffect(() => {

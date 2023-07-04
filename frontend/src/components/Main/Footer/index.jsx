@@ -4,7 +4,7 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarViewMonthIcon from "@mui/icons-material/CalendarViewMonth";
 import { Link } from "react-router-dom";
-import { getAllFooter } from "../../../api/requests";
+import { getAllFooter } from "../../../api/footer";
 const Index = () => {
   const [footer, setFooter] = useState([]);
   useEffect(() => {
