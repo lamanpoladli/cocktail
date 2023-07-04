@@ -19,6 +19,8 @@ import Wishlist from "../pages/Main/Wishlist/index";
 import EditCategory from "../pages/Admin/EditCategory/EditCategory";
 import AddProduct from "../pages/Admin/AddProduct";
 import EditProduct from "../pages/Admin/EditProduct";
+import Footer from "../pages/Admin/Footer";
+import AddFooter from "../pages/Admin/AddFooter";
 
 
 export const ROUTES = [
@@ -105,7 +107,15 @@ export const ROUTES = [
             {
                 path:'products/edit/:id',
                 element:<EditProduct/>
-            }
+            },
+            {
+                path:'footer',
+                element:<Footer/>
+            },
+            {
+                path:'addfooter',
+                element:<AddFooter/>
+            },
         ]
     }
 ]
