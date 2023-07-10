@@ -16,6 +16,7 @@ const Reservations = () => {
 
   const [reservations, setReservations] = useState([]);
   const [isAccepted, setIsAccepted] = useState(false)
+  console.log(isAccepted);
   useEffect(() => {
     getAllReservations().then((res) => {
       setReservations(res);
@@ -38,7 +39,9 @@ const Reservations = () => {
   }
 
   const handleDelete = (e) => {
-    let id = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("id")
+    let id = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("id");
+    setReservations(reservations.filter(x=>x._id !== id));
+    
     deleteReservation(id);
     Swal.fire({
       position: 'top-end',

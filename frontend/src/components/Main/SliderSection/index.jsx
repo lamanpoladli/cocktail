@@ -25,7 +25,7 @@ const index = () => {
             <span>
               <p>Exclusive drink services</p>
               <h1 class="animate__animated animate__bounce">Cocktail stage evenings</h1>
-                <Link to="/about"><button class="button-89" role="button">View more</button></Link>
+                <Link to="/about"><button class="button-89" >View more</button></Link>
             </span>
           </div>
         </div>
@@ -41,9 +41,7 @@ const index = () => {
               <p>Exclusive drink services</p>
               <h1 class="animate__animated animate__bounce">Cocktail stage evenings</h1>
 
-              <button class="button-89" role="button">
-              View more
-              </button>
+              <Link to={"/about"}><button class="button-89" >View more</button></Link>
             </span>
           </div>
         </div>
@@ -59,9 +57,7 @@ const index = () => {
               <p>Exclusive drink services</p>
               <h1 class="animate__animated animate__bounce">Cocktail stage evenings</h1>
 
-              <button class="button-89" role="button">
-              View more
-              </button>
+              <Link to="/about"><button class="button-89" >View more</button></Link>
             </span>
           </div>
         </div>

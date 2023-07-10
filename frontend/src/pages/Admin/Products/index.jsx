@@ -17,6 +17,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Input } from 'antd';
+import { Button } from "@mui/material";
 
 const Products = () => {
   const [categories, setCategories] = useState([]);
@@ -67,8 +68,19 @@ const Products = () => {
         <button className="editbtn marginbtn">Add Product</button>
       </Link>
       <Input className="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search" />
+      <Button
+                variant="contained"
+                color="success"
+                style={{ marginLeft: '10px',backgroundColor:"black",border:"solid"}}
+                onClick={() => {
+                  let sortedProducts = [...products.sort((a, b) => a.price - b.price)];
+                  setProducts(sortedProducts);
+                }}
+              >
+                Sort by Price
+              </Button>
       <h2>Products</h2>
-    
+     
       <TableContainer style={{width:"90%",margin:"0 auto"}} component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>

@@ -174,6 +174,9 @@ export default function Suggestions() {
         </div>
       </div>
     </section>
+    <section className="sectionIframe">
+              <img src="https://bridge269.qodeinteractive.com/wp-content/uploads/2019/11/Inner-map.jpg" alt="" />
+    </section>
     </>
   )
 }

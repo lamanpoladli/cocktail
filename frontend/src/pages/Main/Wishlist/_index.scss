@@ -231,231 +231,119 @@
 
 
 
-
-
-
-
-
-.WishlistSection{
-  width: 100%;
-  background-color: rgb(0, 0, 0);
-  .rowWishlist{
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.cardBox {
-  width: 22%;
-  height: 300px;
-  margin-right: 3%;
-  margin-bottom: 2%;
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: rgb(255, 255, 255) 0px 2px 10px 0px,
-    rgba(255, 255, 255, 0.724) 0px 2px 25px 0px;
-}
-
-.cardWishlist {
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  background: white;
-  border-radius: 20px;
-  z-index: 5;
+.rowWishlist{
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: black;
-  overflow: hidden;
-  padding: 20px;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+  flex-wrap: wrap;
 }
 
-.cardWishlist .h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-weight: 800;
-  pointer-events: none;
-}
-
-.cardWishlist .content .h3 {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.cardWishlist .content p {
-  font-size: 14px;
-  line-height: 1.4em;
-}
-
-.cardWishlist .content {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-}
-
-.cardWishlist:hover .content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.cardWishlist:hover .h4 {
-  opacity: 0;
-}
-
-.cardBox::before {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 150%;
-  background: #d3eb00;
-  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-  transform-origin: center;
-  animation: glowing_401 5s linear infinite;
-}
-
-@keyframes glowing_401 {
-  0% {
-    transform: rotate(0);
+  .card-container {
+    width: 23%;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-right: 2%;
+    margin-bottom: 2%;
   }
-
-  100% {
-    transform: rotate(360deg);
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: none;
   }
-}
-
-.buttonWishlist {
-  width: 220px;
-  position: relative;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  background-color: red;
-  transition: all 0.2s ease;
-  border: 1px solid red;
-}
-
-.buttonWishlist:active {
-  transform: scale(0.95);
-}
-
-.buttonWishlist:before,
-.buttonWishlist:after {
-  position: absolute;
-  content: "";
-  width: 150%;
-  left: 50%;
-  height: 100%;
-  transform: translateX(-50%);
-  z-index: -1000;
-  background-repeat: no-repeat;
-}
-
-.button:hover:before {
-  top: -70%;
-  background-image: radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, transparent 20%, red 20%, transparent 30%),
-    radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, red 15%, transparent 20%),
-    radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, red 20%, transparent 20%),
-    radial-gradient(circle, red 20%, transparent 20%);
-  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-    10% 10%, 18% 18%;
-  background-position: 50% 120%;
-  animation: orangeTopBubbles 0.6s ease;
-}
-
-@keyframes orangeTopBubbles {
-  0% {
-    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-      40% 90%, 55% 90%, 70% 90%;
+  .buttonWishlist{
+    background-color: black;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: #f5dcdc;
   }
-
-  50% {
-    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-      50% 50%, 65% 20%, 90% 30%;
+  .card .front-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
   }
-
-  100% {
-    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-      50% 40%, 65% 10%, 90% 20%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  
+  .card .front-content p {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 1;
+    background: linear-gradient(-45deg, #f89b29 0%, #000000 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
   }
-}
-
-.button:hover::after {
-  bottom: -70%;
-  background-image: radial-gradient(circle, #ff7f50 20%, transparent 20%),
-    radial-gradient(circle, #ff7f50 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #ff7f50 15%, transparent 20%),
-    radial-gradient(circle, #ff7f50 20%, transparent 20%),
-    radial-gradient(circle, #ff7f50 20%, transparent 20%),
-    radial-gradient(circle, #ff7f50 20%, transparent 20%),
-    radial-gradient(circle, #ff7f50 20%, transparent 20%);
-  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
-  background-position: 50% 0%;
-  animation: orangeBottomBubbles 0.6s ease;
-}
-
-@keyframes orangeBottomBubbles {
-  0% {
-    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-      70% -10%, 70% 0%;
+  
+  .card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background: linear-gradient(-45deg, #f89b29 0%, #000000 100% );
+    color: #e8e8e8;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translatex(96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   }
-
-  50% {
-    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
-      105% 0%;
+  
+  .card .content .heading {
+    font-size: 32px;
+    font-weight: 700;
   }
-
-  100% {
-    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
-      110% 10%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  
+  .card:hover .content {
+    transform: translateY(0);
   }
-}
-
-@media screen and (max-width: 1250px) {
-  .rowWishlist{
-      width: 90% !important;
+  
+  .card:hover .front-content {
+    transform: translateX(20%);
   }
-  .cardBox {
-      width: 30% !important;
+  
+  .card:hover .front-content p {
+    opacity: 0;
   }
-}
-@media screen and (max-width: 770px) {
-  .rowWishlist{
-      width: 100% !important;
+  
+  @media screen and (max-width: 1400px) {
+    .rowWishlist{
+      width: 80%;
+    }
+    .card-container {
+      width: 31%;
+    }
   }
-  .cardBox {
-      width: 47% !important;
+  @media screen and (max-width: 1000px) {
+    .rowWishlist{
+      width: 90%;
+    }
+    .card-container {
+      width: 48%;
+    }
   }
-}
-@media screen and (max-width: 500px) {
-  .rowWishlist{
-      width: 100% !important;
+  @media screen and (max-width: 600px) {
+    .rowWishlist{
+      width: 90%;
+    }
+    .card-container {
+      width: 98%;
+    }
   }
-  .cardBox {
-      width: 100% !important;
-  }
-}

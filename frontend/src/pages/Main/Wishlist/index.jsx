@@ -13,6 +13,7 @@ const Index = () => {
     // console.log(wishList);
     localStorage.setItem("wishlist", JSON.stringify(wishList));
     setIsClicked(true);
+    console.log("slaam")
   };
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Index = () => {
       <div className="wishlist">
         <h1>Wishlist</h1>
       </div>
-      <section className="WishlistSection">
+      {/* <section className="WishlistSection">
         <div className="rowWishlist">
           {data.map((x) => (
             <div key={x._id} class="cardBox">
@@ -42,6 +43,27 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+      </section> */}
+      <section className="WishlistSection">
+        <div className="rowWishlist">
+        {data.map((x) => (
+          <div key={x._id} class="card-container">
+            <div class="card">
+              <div class="front-content" id={x._id} onClick={deleteHandler}>
+                <p>{x.name}</p>
+              </div>
+              <div class="content">
+                <p class="heading">Price: {x.price}$</p>
+                <p>
+                {x.title}
+                </p>
+                <button class="buttonWishlist">Delete from Wishlist!</button>
+              </div>
+            </div>
+          </div>
+          
           ))}
         </div>
       </section>

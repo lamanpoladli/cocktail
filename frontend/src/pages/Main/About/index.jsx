@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./_index.scss"
 import { getAllAbouts } from '../../../api/about';
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [about, setAbout] = useState([]);
@@ -20,6 +21,7 @@ const Index = () => {
         }
         setIsPlaying(!isPlaying);
     };
+    console.log(togglePlay);
   return (
     <>
     <div className='about'>
@@ -37,7 +39,7 @@ const Index = () => {
           <h5>{data.name}</h5>
           <h1>{data.title}</h1>
           <p>{data.description}</p>
-          <button className='buttonSec1'>View More</button>
+          <Link to={"/"}><button className='buttonSec1'>View More</button></Link>
         </div>
       </div>
                   );

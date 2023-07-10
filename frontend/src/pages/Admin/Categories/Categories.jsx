@@ -28,6 +28,7 @@ const Categories = () => {
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search"
       />
+    
       <h2>Categories</h2>
 
       <div className="sectionCategorries">

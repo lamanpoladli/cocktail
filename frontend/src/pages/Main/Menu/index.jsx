@@ -3,11 +3,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./_index.scss";
 import { getAllCategories, getAllProducts } from "../../../api/categoryAndProduct";
 import Swal from "sweetalert2";
+import { Input } from 'antd';
+import { Button } from "@mui/material";
 
 const Index = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search,setSearch]=useState('')
   console.log(loading);
 
   useEffect(() => {
@@ -58,6 +61,21 @@ const Index = () => {
         <h1>Menu</h1>
       </div>
       <section className="menuSec">
+       <div style={{marginLeft:"18%",marginBottom:"5%"}}>
+       <span style={{color:"white"}}>Search Product : </span>
+      <Input className="searchMenu" onChange={(e)=>setSearch(e.target.value)} placeholder="Search product" />
+      <Button
+                variant="contained"
+                color="success"
+                style={{ marginLeft: '10px',backgroundColor:"black",border:"solid"}}
+                onClick={() => {
+                  let sortedProducts = [...products.sort((a, b) => a.price - b.price)];
+                  setProducts(sortedProducts);
+                }}
+              >
+                Sort by Price
+              </Button>
+       </div>
         <div className="menuRow">
           <div className="col12">
             {categories &&
@@ -70,6 +88,9 @@ const Index = () => {
                       <h1>{category.name}</h1>
                     </div>
                     {products
+                    .filter((item)=>{
+                      return search.toLocaleLowerCase() === "" ? item : item.name.toLocaleLowerCase().includes(search)
+                    })
                       .filter((x) => x.categoryID === category._id)
                       .map((product) => (
                         <>
